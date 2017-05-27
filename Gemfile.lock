@@ -176,7 +176,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
-  less-rails
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
