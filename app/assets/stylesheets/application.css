@@ -12,4 +12,79 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+
  */
+
+@font-face {
+    font-family: "ProximaNova-Light";
+    src: url(/assets/ProximaNova-Light.otf) format("truetype");
+}
+
+* {
+    font-family: 'ProximaNova-Light';
+}
+
+
+.link_sem_decoracao {
+	color: #777777!important;
+}
+
+.link_sem_decoracao:hover {
+	color: #777777!important;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.mc-card {
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.mc-card > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 15px;
+    max-height: 30px;
+}
+
+.aumenta-o-icone {
+  transition: all .2s ease-in-out;
+}
+
+.aumenta-o-icone:hover {
+  transform: scale(1.1);
+}
+
+.icone-do-site {
+  padding-right:0;
+}
+
+.no-padding{
+  padding: 0px!important;
+}
+
+.no-padding-left{
+  padding-left: 0px!important;
+}
+
+.no-padding-right{
+  padding-right: 0px!important;
+}
+
+.no-margin{
+  margin: 0!important;
+}
+
+.no-margin-left{
+  margin-left: 0!important;
+}
+
+.no-margin-right{
+  margin-right: 0!important;
+}
