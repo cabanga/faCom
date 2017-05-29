@@ -30,10 +30,13 @@
   <%= @empresa.is_active %>
 </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @empresa.cidade %>
-</p>
+
+
+<div class="col-xs-12 col-sm-2">
+  <% if @empresa.logotipo.present? %>
+    <%= image_tag(@empresa.logotipo, alt:"logotipo da telco", class:"img-rounded img-responsive") %>
+  <%end%>
+</div>
 
 <%= link_to 'Edit', edit_empresa_path(@empresa) %> |
 <%= link_to 'Back', empresas_path %>

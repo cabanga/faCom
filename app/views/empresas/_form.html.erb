@@ -1,15 +1,5 @@
-<%= form_for(empresa) do |f| %>
-  <% if empresa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+<%= simple_form_for(@empresa) do |f| %>
 
-      <ul>
-      <% empresa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= f.label :nome %>
@@ -41,10 +31,11 @@
     <%= f.check_box :is_active %>
   </div>
 
-  <div class="field">
-    <%= f.label :cidade_id %>
-    <%= f.text_field :cidade_id %>
-  </div>
+
+
+
+  <%= f.input :logotipo, input_html: { hidden: true, class:"btn btn-primary" }, label: 'Adicionar logotipo' %>
+
 
   <div class="actions">
     <%= f.submit %>
