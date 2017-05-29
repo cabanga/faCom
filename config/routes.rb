@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :usuarios
+  devise_for :admins
+  
+  resources :admins
+  resources :usuarios
+
+  resources :empresas
+  resources :cidades
   get 'home/index'
   root "home#index"
 

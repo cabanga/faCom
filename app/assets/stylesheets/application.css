@@ -88,3 +88,11 @@
 .no-margin-right{
   margin-right: 0!important;
 }
+
+
+.wrapper {
+  position:absolute;
+  margin-top: 20%;
+  top:100%;
+  left:50%;
+}

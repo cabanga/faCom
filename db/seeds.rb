@@ -4,4 +4,7 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+a = Admin.create(nome: 'jm cabanga', telemovel: "913747220", email: "cabanga@email.com", password: "q1w2e3r4t5", password_confirmation: "qw2e3r4t5")
+
+p a

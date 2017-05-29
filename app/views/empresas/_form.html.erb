@@ -1,0 +1,52 @@
+<%= form_for(empresa) do |f| %>
+  <% if empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+      <% empresa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telemovel %>
+    <%= f.text_field :telemovel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefone %>
+    <%= f.text_field :telefone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.number_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :is_active %>
+    <%= f.check_box :is_active %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cidade_id %>
+    <%= f.text_field :cidade_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

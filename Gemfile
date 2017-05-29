@@ -37,6 +37,11 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'font-awesome-rails'
 #gem "paperclip-dropbox"
+gem 'carrierwave-dropbox'
+gem 'rmagick'
+gem 'mini_magick'
+gem 'devise'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

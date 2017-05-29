@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @empresa.nome %>
+</p>
+
+<p>
+  <strong>Telemovel:</strong>
+  <%= @empresa.telemovel %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @empresa.telefone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @empresa.email %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @empresa.estado %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @empresa.is_active %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @empresa.cidade %>
+</p>
+
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>
