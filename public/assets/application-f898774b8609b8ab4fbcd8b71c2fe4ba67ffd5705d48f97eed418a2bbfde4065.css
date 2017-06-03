@@ -6908,15 +6908,49 @@ button.close {
   margin-right: 0!important;
 }
 
-
 .wrapper {
-  width:100px;
-  height:100px;
   position:absolute;
+  margin-top: 20%;
   top:100%;
   left:50%;
-  margin-top:-50px;
-  margin-left:-50px;
+}
+
+
+[data-href],
+[data-href] * {
+    cursor: pointer;
+}
+
+[data-href]>td>a:not(.btn),
+[data-href]>td>a:hover:not(.btn),
+[data-href]>td>a:active:not(.btn),
+[data-href]>td>a:focus:not(.btn),
+[data-href]>td {
+    color: #444444;
+    text-decoration: none;
+}
+
+.table-hover>tbody>tr[data-href]:hover>td {
+    background-color: #d9edf7;
+}
+
+[data-href]:hover>td>a:not(.btn),
+[data-href]:hover>td>a:hover:not(.btn),
+[data-href]:hover>td>a:active:not(.btn),
+[data-href]:hover>td>a:focus:not(.btn),
+[data-href]:hover>td {
+    color: #000000;
+}
+
+[data-href]>td>a>span.glyphicon {
+    color: #428bca;
+    text-decoration: none;
+}
+
+[data-href]>td>a>span.glyphicon:hover,
+[data-href]>td>a>span.glyphicon:active,
+[data-href]>td>a>span.glyphicon:focus {
+    color: #2a6496;
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

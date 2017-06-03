@@ -1,10 +1,10 @@
 class EmpresasController < ApplicationController
   before_action :set_empresa, only: [:show, :edit, :update, :destroy]
 
-  # GET /empresas
-  # GET /empresas.json
   def index
+    redirect_to new_usuario_session_url unless usuario_signed_in?
     @empresas = Empresa.all
+
   end
 
   # GET /empresas/1

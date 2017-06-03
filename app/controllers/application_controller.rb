@@ -1,4 +1,8 @@
+include ApplicationHelper
+
 class ApplicationController < ActionController::Base
+  alias_method :current_user, :current_usuario
+
   protect_from_forgery with: :exception
 
 
@@ -8,24 +12,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:login, :email, :telemovel, :password, :password_confirmation, :current_password, :remember_me) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:nome, :email, :telemovel, :password, :password_confirmation, :roles_mask, :current_password) }
   end
-
-
-
-
-
-
-
-  def verificar_current_login
-    if admin_signed_in?
-      authenticate_admin!
-    elsif usuario_signed_in?
-      authenticate_usuario!
-    end
-  end
-
-
-
-
 
 
 end

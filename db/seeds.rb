@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 
-a = Admin.create(nome: 'jm cabanga', telemovel: "913747220", email: "cabanga@email.com", password: "q1w2e3r4t5", password_confirmation: "qw2e3r4t5")
+cidade = Cidade.create(nome: "Luanda", codigo:"LDA")
 
-p a
+empresa = Empresa.create(nome: "ZuberCompany", telemovel: "913000000", telefone: "222000000", email: "zuber@email.com", estado: 1, is_active: true, cidade_id: cidade.id, logotipo: nil)
+Usuario.create(nome: "Jose Maria Victorio", telemovel: '923000111', email: 'jose.victorio@email.com', password: 'q1w2e3r4t5', password_confirmation: 'q1w2e3r4t5')

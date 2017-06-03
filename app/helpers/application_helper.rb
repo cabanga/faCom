@@ -1,29 +1,10 @@
 module ApplicationHelper
-   
 
-
-
-  def nome_current_user
-    if admin_signed_in?
-      (current_admin.nome.blank?)? current_admin.email : current_admin.nome
-    elsif usuario_signed_in?
-      (current_usuario.nome.blank?)? current_usuario.email : current_usuario.nome
-    end
-  end
-
-  def current_auth_resource
-    if admin_signed_in?
-      current_admin
-    else
-      current_usuario
-    end
-  end
-
-  def link_destroy_session
-    if admin_signed_in?
-      destroy_admin_session_path
-    elsif usuario_signed_in?
-      destroy_usuario_session_path
+  def breadcrumb_index(items)
+    content_tag(:div, :class => "") do
+      content_tag(:ol, :class => "breadcrumb") do
+        items.collect { |item| concat(content_tag(:li, item, class: "active")) }
+      end
     end
   end
 
@@ -43,9 +24,6 @@ module ApplicationHelper
     end
   end
 
-  def user_signed_in?
-    admin_signed_in? || usuario_signed_in?
-  end
 
 
 end

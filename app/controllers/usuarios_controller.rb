@@ -25,9 +25,11 @@ class UsuariosController < ApplicationController
   # POST /usuarios.json
   def create
     @usuario = Usuario.new(usuario_params)
-
+    @usuario.role = 1
     respond_to do |format|
       if @usuario.save
+        @usuario.cria_empresa
+
         format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
         format.json { render :show, status: :created, location: @usuario }
       else

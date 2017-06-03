@@ -14552,6 +14552,18 @@ jQuery(function() {
 
 
 }).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14569,4 +14581,39 @@ jQuery(function() {
 
 
 
+
+
+$(document).ready(function(){
+
+  $('[data-href]').click(function(e){
+    var link = $(this).data("href");
+    var alvo = e.target;
+
+    if (alvo.hasAttribute("data-href") || alvo.tagName === "TD"){
+      window.document.location = link;
+    }
+
+  });
+
+
+  if ( $('.has-error').length ) {
+
+    $('#myModal').modal('show');
+    // $('#myModal_segundo').modal('show');
+    // $('div.alert.alert-danger').addClass("hide");
+    // var id = $('.has-error').parents('.modal').first().attr('id');
+    //
+    // $('#' + id).modal('show');
+  }
+
+  $('#activa_model').click(function(){
+    $('#myModal').modal('show');
+  });
+
+  $('#botao_cancelar').click(function(){
+    $('#myModal').modal('hide');
+  });
+
+
+})
 ;

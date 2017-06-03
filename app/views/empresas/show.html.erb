@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<%= breadcrumb_index([link_to('Home', root_url), current_usuario.admin? ? link_to('Empresas', empresas_path) : link_to('Configurações', empresas_path), "#{@empresa.nome}"]) %>
 
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to 'Empresas', empresas_path %> </li>
+  <li role="presentation"> <%= link_to 'Editar', edit_empresa_path(@empresa) %></li>
+</ul>
+
+<br>
 <p>
   <strong>Nome:</strong>
   <%= @empresa.nome %>
@@ -37,6 +43,3 @@
     <%= image_tag(@empresa.logotipo, alt:"logotipo da telco", class:"img-rounded img-responsive") %>
   <%end%>
 </div>
-
-<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
-<%= link_to 'Back', empresas_path %>
