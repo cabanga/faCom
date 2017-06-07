@@ -41,12 +41,11 @@ gem 'carrierwave-dropbox'
 gem 'rmagick'
 gem 'mini_magick'
 gem 'devise'
-
 gem 'simple_form'
-
 gem 'cancancan', '~> 1.16'
-
 gem 'devise-i18n'
+gem 'newrelic_rpm'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
