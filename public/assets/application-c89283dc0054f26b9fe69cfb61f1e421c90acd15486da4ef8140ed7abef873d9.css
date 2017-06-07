@@ -8,9 +8,6 @@
   right: 0px;
   min-width: 200px;
   min-height: 50px;
-  background: #87D37C;
-
-
   font-size: 12px;
   z-index: 9999999999999999999999999999999;
 }
@@ -23,24 +20,9 @@
 
 }
 
-.animacao-end{
-  animation-name: fadeOutUp;
-  -webkit-animation-name: fadeOutUp;
-  -webkit-animation-duration: 0.25s;
-  animation-duration: 0.50s;
-
-}
-
-
 @keyframes fadeInRightBig {
   from { opacity: 0; transform: translate3d(2000px, 0, 0); }
   to { opacity: 1; transform: none; }
-}
-
-
-@keyframes fadeOutUp {
-  from { opacity: 1; }
-  to { opacity: 0; transform: translate3d(0, -100%, 0); }
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
