@@ -6871,6 +6871,18 @@ button.close {
     font-family: 'ProximaNova-Light';
 }
 
+.btn-padding{
+  padding: 9px!important;
+  background-color: #fff!important;
+}
+
+.apagar{
+  color: #D91E18!important;
+}
+
+.guardar{
+  color: #26A65B;
+}
 
 .link_sem_decoracao {
 	color: #777777!important;

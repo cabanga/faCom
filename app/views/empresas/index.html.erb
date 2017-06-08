@@ -1,16 +1,18 @@
-<%= breadcrumb_index([link_to('Home', root_url), current_usuario.super_admin? ? "Empresas" : "Configurações"]) %>
+<%= breadcrumb_index([link_to('Home', root_url),current_usuario.super_admin? ? 'Empresas' : 'Configurações']) %>
 
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to 'Adicionar Empresa', new_empresa_path %> </li>
+</ul>
 <br>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Telemovel</th>
-      <th>Telefone</th>
-      <th>Email</th>
-      <th>Estado</th>
-      <th>Is active</th>
+      <th>NOME</th>
+      <th>TELEMÓVEL</th>
+      <th>TELEFONE</th>
+      <th>E-MAIL</th>
+      <th>ESTADO</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +25,6 @@
         <td><%= empresa.telefone %></td>
         <td><%= empresa.email %></td>
         <td><%= empresa.estado %></td>
-        <td><%= empresa.is_active %></td>
         <td><%= link_to 'Show', empresa %></td>
         <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
         <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,5 +34,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Empresa', new_empresa_path %>

@@ -28,7 +28,7 @@ class UsuariosController < ApplicationController
     @usuario.role = 1
     respond_to do |format|
       if @usuario.save
-        # @usuario.cria_empresa
+        @usuario.cria_empresa
 
         format.html { redirect_to @usuario, notice: 'Usuario was successfully created.' }
         format.json { render :show, status: :created, location: @usuario }
@@ -71,6 +71,6 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :telemovel, :empresa_id)
+      params.require(:usuario).permit(:nome, :telemovel, :empresa_id, :role)
     end
 end

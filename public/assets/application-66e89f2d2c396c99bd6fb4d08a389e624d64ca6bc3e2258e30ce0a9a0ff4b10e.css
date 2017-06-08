@@ -8,7 +8,6 @@
   right: 0px;
   min-width: 200px;
   min-height: 50px;
-  color: #ffffff;
   font-size: 12px;
   z-index: 9999999999999999999999999999999;
 }
@@ -20,8 +19,6 @@
   animation-duration: 0.50s;
 
 }
-
-
 
 @keyframes fadeInRightBig {
   from { opacity: 0; transform: translate3d(2000px, 0, 0); }
@@ -6874,6 +6871,39 @@ button.close {
     font-family: 'ProximaNova-Light';
 }
 
+.profile-img-card {
+  text-align: right;
+    width: 117px;
+    height: 117px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #9d9d9d;
+}
+
+  .form-login {
+    background-color: #EDEDED;
+    padding: 15px;
+    border-radius: 4px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+
+.btn-padding{
+  padding: 9px!important;
+  background-color: #fff!important;
+}
+
+.apagar{
+  color: #D91E18!important;
+}
+
+.guardar{
+  color: #26A65B;
+}
 
 .link_sem_decoracao {
 	color: #777777!important;

@@ -1,10 +1,17 @@
 class EmpresasController < ApplicationController
+  alias_method :current_user, :current_usuario
+
   before_action :set_empresa, only: [:show, :edit, :update, :destroy]
 
   def index
     redirect_to new_usuario_session_url unless usuario_signed_in?
-    @empresas = Empresa.all
-
+    if (current_usuario.super_admin?)
+      @empresas = Empresa.all
+    else
+      @empresa = Empresa.find_by(id: current_usuario.empresa.id)
+      redirect_to @empresa
+    end
+    
   end
 
   # GET /empresas/1

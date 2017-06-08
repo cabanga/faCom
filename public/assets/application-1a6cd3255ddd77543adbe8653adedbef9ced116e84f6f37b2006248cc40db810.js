@@ -13936,11 +13936,10 @@ $(document).ready(function(){
     $('div.alert.fade.in').addClass("animacao-open");
     $('button.close').addClass("hide");
 
-    // setTimeout(function(){
-    //   $('div.alert.fade.in.box-notification').removeClass("animacao-open");
-    //   $('div.alert.fade.in.box-notification').addClass("animacao-end");
-    //
-    // }, 3000);
+    setTimeout(function(){
+      $("div.alert.fade.in").fadeOut(3000);
+
+    }, 3000);
   }
 
 
@@ -14565,6 +14564,10 @@ jQuery(function() {
   this.App || (this.App = {});
 
   App.cable = ActionCable.createConsumer();
+
+}).call(this);
+(function() {
+
 
 }).call(this);
 (function() {

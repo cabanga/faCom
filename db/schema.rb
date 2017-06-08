@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603102810) do
+ActiveRecord::Schema.define(version: 20170608064401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 20170603102810) do
     t.datetime "updated_at", null: false
     t.string   "logotipo"
     t.index ["cidade_id"], name: "index_empresas_on_cidade_id", using: :btree
+  end
+
+  create_table "registos", force: :cascade do |t|
+    t.string   "nome_user"
+    t.string   "nome_empresa"
+    t.string   "telemovel"
+    t.string   "email"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "cidade_id"
+    t.integer  "estado",       default: 0, null: false
+    t.index ["cidade_id"], name: "index_registos_on_cidade_id", using: :btree
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -66,5 +78,6 @@ ActiveRecord::Schema.define(version: 20170603102810) do
   end
 
   add_foreign_key "empresas", "cidades"
+  add_foreign_key "registos", "cidades"
   add_foreign_key "usuarios", "empresas"
 end

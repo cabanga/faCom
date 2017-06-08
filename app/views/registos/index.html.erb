@@ -1,0 +1,38 @@
+<%= breadcrumb_index([link_to('Home', root_url), "Registos"]) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to 'Adicionar Registo', new_registo_path %> </li>
+</ul>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>NOME DO USUÁRIO</th>
+      <th>NOME DA EMPRESA</th>
+      <th>TELEMÓVEL</th>
+      <th>E-MAIL</th>
+      <th>ESTADO</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registos.each do |registo| %>
+      <tr data-href="<%= registo_url(registo)%>">
+        <td><%= registo.nome_user %></td>
+        <td><%= registo.nome_empresa %></td>
+        <td><%= registo.telemovel %></td>
+        <td><%= registo.email %></td>
+        <td><%= registo.estado %></td>
+        <% if registo.estado == 0 %>
+          <td class="text-right"><%= link_to "Aprovar", aprovar_registo_url(registo), method: :patch, class:"btn btn-success btn-xs", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %></td>
+        <% end %>
+        <td><%= link_to 'Apagar', registo, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>

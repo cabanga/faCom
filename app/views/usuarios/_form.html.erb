@@ -1,4 +1,11 @@
-<%= form_for(usuario) do |f| %>
+<%= simple_form_for(@usuario, html:{ multipart: true }) do |f| %>
+  <ul class="nav nav-tabs">
+    <li role="presentation " class="active"> <%= f.button :submit, "Guardar", class:"guardar btn-padding" %> </li>
+    <li role="presentation"> <%= link_to 'Cancelar', usuarios_url %> </li>
+  </ul>
+
+  <br>
+
   <% if usuario.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
@@ -11,22 +18,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_field :nome %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= f.input :nome, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: Joaquim de Almeida Paulo', label: "Nome do Usuário"  %>
+      <br>
+      <%= f.input :telemovel, :input_html => {class:'form-control '}, placeholder: 'ex: 913747220', label: "Nº de Telemóvel"  %>
+      <br>
+      <%= f.association :empresa, :input_html => {class:'form-control '}, placeholder: 'Adiciona a Empresa', label: "Empresa", collection: Empresa.all, label_method: :nome, value_method: :id   %>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :telemovel %>
-    <%= f.text_field :telemovel %>
-  </div>
-
-  <div class="field">
-    <%= f.label :empresa_id %>
-    <%= f.text_field :empresa_id %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+
+<style media="screen">
+
+</style>

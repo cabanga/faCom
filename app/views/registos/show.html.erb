@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome user:</strong>
+  <%= @registo.nome_user %>
+</p>
+
+<p>
+  <strong>Nome empresa:</strong>
+  <%= @registo.nome_empresa %>
+</p>
+
+<p>
+  <strong>Telemovel:</strong>
+  <%= @registo.telemovel %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @registo.email %>
+</p>
+
+<%= link_to 'Edit', edit_registo_path(@registo) %> |
+<%= link_to 'Back', registos_path %>

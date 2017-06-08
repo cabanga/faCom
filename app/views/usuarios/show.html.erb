@@ -1,19 +1,12 @@
 <p id="notice"><%= notice %></p>
+<%= breadcrumb_index([link_to('Home', root_url), link_to('Usuários', usuarios_url), "#{@usuario.nome}"]) %>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @usuario.nome %>
-</p>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to 'Eidtar', edit_usuario_path(@usuario) %> </li>
+  <li role="presentation" class="active"> <%= link_to 'Apagar', @usuario, method: :delete, data: { confirm: 'Are you sure?' }, class: "apagar" %> </li>
+</ul>
+<br>
 
-<p>
-  <strong>Telemovel:</strong>
-  <%= @usuario.telemovel %>
-</p>
-
-<p>
-  <strong>Empresa:</strong>
-  <%= @usuario.empresa %>
-</p>
-
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+<p><strong>NOME: </strong><%= @usuario.nome %></p>
+<p><strong>TELEMÓVEL: </strong><%= @usuario.telemovel %></p>
+<p><strong>EMPRESA: </strong><%= @usuario.empresa %></p> 
