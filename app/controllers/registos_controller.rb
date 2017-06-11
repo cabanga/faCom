@@ -4,6 +4,8 @@ class RegistosController < ApplicationController
   # GET /registos
   # GET /registos.json
   def index
+    redirect_to new_usuario_session_url unless usuario_signed_in?
+
     @registos = Registo.all
   end
 
@@ -28,7 +30,11 @@ class RegistosController < ApplicationController
 
     respond_to do |format|
       if @registo.save
-        format.html { redirect_to @registo, notice: 'Registo was successfully created.' }
+        if (usuario_signed_in?)
+          format.html { redirect_to @registo, notice: 'Registo criado com sucesso.' }
+        else
+          format.html { redirect_to root_url, notice: 'Registo enviado com sucesso.' }
+        end
         format.json { render :show, status: :created, location: @registo }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class RegistosController < ApplicationController
   def update
     respond_to do |format|
       if @registo.update(registo_params)
-        format.html { redirect_to @registo, notice: 'Registo was successfully updated.' }
+        format.html { redirect_to @registo, notice: 'Registo actualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @registo }
       else
         format.html { render :edit }
@@ -56,7 +62,7 @@ class RegistosController < ApplicationController
   def destroy
     @registo.destroy
     respond_to do |format|
-      format.html { redirect_to registos_url, notice: 'Registo was successfully destroyed.' }
+      format.html { redirect_to registos_url, notice: 'Registo eliminado com sucesso.' }
       format.json { head :no_content }
     end
   end

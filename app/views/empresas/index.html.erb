@@ -1,7 +1,7 @@
 <%= breadcrumb_index([link_to('Home', root_url),current_usuario.super_admin? ? 'Empresas' : 'Configurações']) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to 'Adicionar Empresa', new_empresa_path %> </li>
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Empresa</span>', new_empresa_path %> </li>
 </ul>
 <br>
 
@@ -25,9 +25,7 @@
         <td><%= empresa.telefone %></td>
         <td><%= empresa.email %></td>
         <td><%= empresa.estado %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text-right"><%= link_to 'Apagar', empresa, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
       </tr>
     <% end %>
   </tbody>

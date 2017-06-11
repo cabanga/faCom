@@ -6,10 +6,10 @@
         </div>
     <% end %>
 
-    <%= link_to "#", class: 'link_sem_decoracao' do %>
+    <%= link_to funcionarios_url, class: 'link_sem_decoracao' do %>
         <div class="mc-card">
           <h4><span class="fa fa-folder-open-o fa-3x icone-do-site aumenta-o-icone"></span></h4>
-            <p>MEUS CLIENTES</p>
+            <p>FUNCIONÁRIOS</p>
         </div>
     <% end %>
 
@@ -33,6 +33,13 @@
           <div class="mc-card">
               <h4><span class="fa fa-folder-open-o fa-3x icone-do-site aumenta-o-icone"></span></h4>
               <p>REGISTOS</p>
+          </div>
+      <% end %>
+
+      <%= link_to empresas_url, class: 'link_sem_decoracao' do %>
+          <div class="mc-card">
+              <h4><span class="fa fa-building fa-3x icone-do-site aumenta-o-icone"></span></h4>
+              <p>EMPRESAS</p>
           </div>
       <% end %>
 

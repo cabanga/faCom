@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<%= breadcrumb_index([link_to('Home', root_url), link_to('Funcionários', funcionarios_url), "#{@funcionario.nome}"]) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_funcionario_path(@funcionario) %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @funcionario, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
+</ul>
+<br>
+
+<p><strong>NOME:</strong> <%= @funcionario.nome %></p>
+<p><strong>TELEMÓVEL:</strong> <%= @funcionario.telemovel %></p>
+<p><strong>TIPO DE IDENTIFICAÇÃO:</strong> <%= @funcionario.tipo_de_ident %></p>
+<p><strong>Nº DE IDENTIFICAÇÃO:</strong> <%= @funcionario.numero_ident %></p>

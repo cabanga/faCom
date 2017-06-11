@@ -1,41 +1,16 @@
-<%= breadcrumb_index([link_to('Home', root_url), current_usuario.admin? ? link_to('Empresas', empresas_path) : link_to('Configurações', empresas_path), "#{@empresa.nome}"]) %>
+<%= breadcrumb_index([link_to('Home', root_url), current_usuario.super_admin? ? link_to('Empresas', empresas_path) : link_to('Configurações', empresas_path), "#{@empresa.nome}"]) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to 'Empresas', empresas_path %> </li>
-  <li role="presentation"> <%= link_to 'Editar', edit_empresa_path(@empresa) %></li>
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_funcionario_path(@empresa) %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @empresa, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
 </ul>
 
 <br>
-<p>
-  <strong>Nome:</strong>
-  <%= @empresa.nome %>
-</p>
-
-<p>
-  <strong>Telemovel:</strong>
-  <%= @empresa.telemovel %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @empresa.telefone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @empresa.email %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @empresa.estado %>
-</p>
-
-<p>
-  <strong>Is active:</strong>
-  <%= @empresa.is_active %>
-</p>
-
+<p><strong>Nome: </strong><%= @empresa.nome %></p>
+<p><strong>Telemovel: </strong><%= @empresa.telemovel %></p>
+<p><strong>Telefone: </strong><%= @empresa.telefone %></p>
+<p><strong>Email: </strong><%= @empresa.email %></p>
+<p><strong>Estado: </strong><%= @empresa.estado %></p>
 
 
 <div class="col-xs-12 col-sm-2">

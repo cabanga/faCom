@@ -1,24 +1,13 @@
 <p id="notice"><%= notice %></p>
+<%= breadcrumb_index([link_to('Home', root_url), link_to('Registos', registos_url), "Resgisto da Empresa #{@registo.nome_empresa}"]) %>
 
-<p>
-  <strong>Nome user:</strong>
-  <%= @registo.nome_user %>
-</p>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_registo_path(@registo) %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @registo, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
+</ul>
+<br>
 
-<p>
-  <strong>Nome empresa:</strong>
-  <%= @registo.nome_empresa %>
-</p>
-
-<p>
-  <strong>Telemovel:</strong>
-  <%= @registo.telemovel %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @registo.email %>
-</p>
-
-<%= link_to 'Edit', edit_registo_path(@registo) %> |
-<%= link_to 'Back', registos_path %>
+<p><strong>NOME DO ADMIN:</strong> <%= @registo.nome_user %></p>
+<p><strong>NOME DA EMPRESA:</strong> <%= @registo.nome_empresa %></p>
+<p><strong>TELEMÓVEL:</strong> <%= @registo.telemovel %></p>
+<p><strong>E-MAIL:</strong> <%= @registo.email %></p>

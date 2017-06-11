@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<%= breadcrumb_index([link_to('Home', root_url), "Funcionários"]) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Funcionário</span>'.html_safe, new_funcionario_path %> </li>
+</ul>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>NOME</th>
+      <th>TELEMÓVEL</th>
+      <th>TIPO DE IDENTIFICAÇÃO</th>
+      <th>NÚMERO DE IDENTIFICAÇÃO</th>
+      <% if current_usuario.super_admin? %>
+        <th>EMPRESA ASSOCIADA</th>
+      <% end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @funcionarios.each do |funcionario| %>
+      <tr data-href="<%= funcionario_url(funcionario)%>">
+        <td><%= funcionario.nome %></td>
+        <td><%= funcionario.telemovel %></td>
+        <td><%= funcionario.tipo_de_ident %></td>
+        <td><%= funcionario.numero_ident %></td>
+
+        <% if current_usuario.super_admin? %>
+          <td><%= funcionario.empresa %></td>
+        <% end %>
+        <td class="text-right"><%= link_to 'Apagar', funcionario, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

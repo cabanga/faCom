@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  telemovel: MyString
+  tipo_de_id: MyString
+  numero_id: MyString
+
+two:
+  nome: MyString
+  telemovel: MyString
+  tipo_de_id: MyString
+  numero_id: MyString

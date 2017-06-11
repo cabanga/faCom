@@ -4,6 +4,8 @@ class CidadesController < ApplicationController
   # GET /cidades
   # GET /cidades.json
   def index
+    redirect_to new_usuario_session_url unless usuario_signed_in?
+
     @cidades = Cidade.all
   end
 
