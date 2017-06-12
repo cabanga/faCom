@@ -1,7 +1,7 @@
 <%= breadcrumb_index([link_to('Home', root_url),current_usuario.super_admin? ? 'Empresas' : 'Configurações']) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Empresa</span>', new_empresa_path %> </li>
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Empresa</span>'.html_safe, new_empresa_path %> </li>
 </ul>
 <br>
 
