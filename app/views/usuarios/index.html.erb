@@ -2,7 +2,7 @@
 <%= breadcrumb_index([link_to('Home', root_url), "Usuários"]) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Usuário</span>', new_usuario_path %> </li>
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Usuário</span>'.html_safe, new_usuario_path %> </li>
 </ul>
 <br>
 

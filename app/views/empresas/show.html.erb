@@ -3,7 +3,10 @@
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_funcionario_path(@empresa) %> </li>
   <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @empresa, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
+  <li role="presentation"> <%= link_to "<span>#{icon_activar_e_desactivar(@empresa.is_active)} #{esta_activado(@empresa.is_active)} </span>".html_safe, activar_e_desactivar_url(@empresa), method: :patch, class:"#{cor_do_activar_e_desactivar(@empresa.is_active)}", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %> </li>
 </ul>
+
+
 
 <br>
 <p><strong>Nome: </strong><%= @empresa.nome %></p>

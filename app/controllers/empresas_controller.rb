@@ -1,7 +1,7 @@
 class EmpresasController < ApplicationController
   alias_method :current_user, :current_usuario
 
-  before_action :set_empresa, only: [:show, :edit, :update, :destroy]
+  before_action :set_empresa, only: [:show, :edit, :update, :destroy, :activar_e_desactivar]
 
   def index
     redirect_to new_usuario_session_url unless usuario_signed_in?
@@ -11,7 +11,7 @@ class EmpresasController < ApplicationController
       @empresa = Empresa.find_by(id: current_usuario.empresa.id)
       redirect_to @empresa
     end
-    
+
   end
 
   # GET /empresas/1
@@ -56,6 +56,18 @@ class EmpresasController < ApplicationController
         format.json { render json: @empresa.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def activar_e_desactivar
+    @empresa.activar_e_desactivar_empresa
+
+    if (@empresa.is_active)
+      flash[:notice] = 'A empresa foi activada'
+    else
+      flash[:notice] = 'A empresa foi desactivada'
+    end
+
+    redirect_to @empresa
   end
 
   # DELETE /empresas/1
