@@ -1,10 +1,35 @@
 module ApplicationHelper
 
+  def testo_da_factura_index(is)
+    if (is)
+      "Paga"
+    else
+      "Não Paga"
+    end
+
+  end
+
   def esta_activado(is)
     if (is)
       "Desactivar"
     else
       "Activar"
+    end
+  end
+
+  def texto_da_factura(is)
+    if (is)
+      "Cancelar Factura"
+    else
+      "Pagar Factura"
+    end
+  end
+
+  def icon_da_factura(is)
+    if (is)
+      "<i class='fa fa-close' aria-hidden='true'></i>"
+    else
+      "<i class='fa fa-check' aria-hidden='true'></i>"
     end
   end
 

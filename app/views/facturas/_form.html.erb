@@ -1,0 +1,32 @@
+
+<%= simple_form_for(@factura, html:{ multipart: true }) do |f| %>
+  <%= f.error_notification %>
+
+  <ul class="nav nav-tabs">
+    <li role="presentation " class="active"> <%= f.button :submit, "Guardar", class:"guardar btn-padding" %> </li>
+    <li role="presentation"> <%= link_to 'Cancelar', facturas_url %> </li>
+  </ul>
+
+  <br>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= f.input :cliente, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: Josymar Chicola', label: "Nome do Cliente"  %>
+      <br>
+      <%= f.input :contacto, :input_html => {class:'form-control '}, placeholder: 'ex: 913747220', label: "Contacto"  %>
+      <br>
+      <%= f.input :tipo_de_servico, :input_html => {class:'form-control '}, placeholder: 'ex: Manutenção ou Ajuste no tal', label: "Tipo de Serviço"  %>
+      <br>
+      <% if (current_usuario.super_admin?) %>
+        <%= f.association :empresa, :input_html => {class:'form-control '}, prompt: 'Adiciona a Empresa', label: false, collection: Empresa.all, label_method: :nome, value_method: :id   %>
+      <% end %>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+
+    </div>
+  </div>
+
+
+<% end %>

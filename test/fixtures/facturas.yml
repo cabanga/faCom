@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  referencia: MyString
+  cliente: MyString
+  contacto: MyString
+  tipo_de_servico: MyString
+  responsavel: MyString
+  empresa: one
+
+two:
+  referencia: MyString
+  cliente: MyString
+  contacto: MyString
+  tipo_de_servico: MyString
+  responsavel: MyString
+  empresa: two

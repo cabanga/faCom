@@ -29,7 +29,7 @@
         <td><%= funcionario.numero_ident %></td>
 
         <% if current_usuario.super_admin? %>
-          <td><%= funcionario.empresa %></td>
+          <td><!--<%= funcionario.empresa %>--></td>
         <% end %>
         <td class="text-right"><%= link_to 'Apagar', funcionario, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
       </tr>

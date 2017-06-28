@@ -1,0 +1,43 @@
+<%= breadcrumb_index([link_to('Home', root_url), 'Facturas']) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Factura</span>'.html_safe, new_factura_path %> </li>
+</ul>
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>REFERENÇIAS</th>
+      <th>CLIENTE</th>
+      <th>CONTACTO</th>
+      <th>TIPO DE SERVIÇO</th>
+      <th>RESPONSÁVEL</th>
+      <th>ESTADO</th>
+      <% if (current_usuario.super_admin?) %>
+        <th>EMPRESA</th>
+      <% end %>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @facturas.each do |factura| %>
+    <tr data-href="<%= factura_url(factura)%>">
+      <td><%= factura.referencia %></td>
+      <td><%= factura.cliente %></td>
+      <td><%= factura.contacto %></td>
+      <td><%= factura.tipo_de_servico %></td>
+      <td><%= factura.responsavel %></td>
+      <td><%= testo_da_factura_index(factura.is_payd) %></td>
+
+      <% if (current_usuario.super_admin?) %>
+        <td><%= factura.empresa.nome %></td>
+      <% end %>
+      <td class="text-right"><%= link_to 'Apagar', factura, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
