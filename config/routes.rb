@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :funcionarios
   resources :registos
+
+  devise_for :usuarios
+
   resources :usuarios
+
 
   resources :empresas
   resources :cidades

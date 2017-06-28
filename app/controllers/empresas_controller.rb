@@ -1,5 +1,4 @@
 class EmpresasController < ApplicationController
-  alias_method :current_user, :current_usuario
 
   before_action :set_empresa, only: [:show, :edit, :update, :destroy, :activar_e_desactivar]
 
