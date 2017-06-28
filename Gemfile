@@ -45,6 +45,7 @@ gem 'simple_form'
 gem 'cancancan', '~> 1.16'
 gem 'devise-i18n'
 gem 'newrelic_rpm'
+gem 'omniauth-facebook'
 
 
 # Use Capistrano for deployment

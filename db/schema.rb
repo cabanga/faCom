@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608142537) do
+ActiveRecord::Schema.define(version: 20170628154859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,10 @@ ActiveRecord::Schema.define(version: 20170608142537) do
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.integer  "role"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.index ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
     t.index ["empresa_id"], name: "index_usuarios_on_empresa_id", using: :btree
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
