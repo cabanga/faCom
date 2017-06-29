@@ -15,7 +15,9 @@
       <br>
       <%= f.input :telefone, :input_html => {class:'form-control '}, placeholder: 'ex: 913747220', label: "Outro Contcto"  %>
       <br>
-      <%= f.input :is_active, label: "Marca para activar a Empresa" %>
+      <% if (current_usuario.super_admin?) %>
+        <%= f.input :is_active, label: "Marca para activar a Empresa" %>
+      <% end %>
 
     </div>
 

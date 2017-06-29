@@ -22,9 +22,13 @@
       <%= f.input :numero_ident, :input_html => {class:'form-control '}, placeholder: 'ex: 0099KS0001', label: "Nº de Identificação"  %>
       <br>
 
-      <% if (current_usuario.super_admin?) %>
-        <%= f.association :empresa, prompt: 'Adiciona a Empresa', label: "Empresa", collection: Empresa.all, label_method: :nome, value_method: :id   %>
-      <% end %>
+      <!-- <% if (current_usuario.super_admin?) %>
+        <%= f.association :empresa, :input_html => {class:'form-control '}, prompt: 'Adiciona a Empresa', label: false, collection: Empresa.all, label_method: :nome, value_method: :id   %>
+      <% end %> -->
+
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
 
     </div>
   </div>

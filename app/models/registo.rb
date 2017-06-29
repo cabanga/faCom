@@ -1,7 +1,7 @@
 class Registo < ApplicationRecord
   belongs_to :cidade
 
-  enum role: {nao_aprovado: 0, aprovado: 1}
+  enum estado: {em_espera: 0, aprovado: 1}
 
   def criar_empresa
     empresa = Empresa.create(nome: "#{self.nome_empresa}", telemovel: "#{self.telemovel}", telefone: "", email: "#{self.email}", estado: 1, is_active: true, cidade_id: self.cidade)

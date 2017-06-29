@@ -33,4 +33,24 @@ class Usuario < ApplicationRecord
     self.update_columns(empresa_id: empresa.id)
   end
 
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.nome = auth.info.name
+      user.email = auth.info.email
+      user.telemovel = auth.extra.raw_info.phone
+      user.password = "q1w2e3r4t5"
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+
+      puts "="*50
+      p "outro usuario criado"
+      p user
+
+    end
+  end
+
+
 end

@@ -1,0 +1,15 @@
+<%= breadcrumb_index([link_to('Home', root_url), link_to('Facturas', facturas_path), "Factura Nº #{@factura.referencia}"]) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_factura_path(@factura) %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @registo, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
+  <li role="presentation"> <%= link_to "<span>#{icon_da_factura(@factura.is_payd)} #{texto_da_factura(@factura.is_payd)} </span>".html_safe, pagar_factura_url(@factura), method: :patch, class:"#{cor_do_activar_e_desactivar(@factura.is_payd)}", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %> </li>
+
+</ul>
+<br>
+
+<p><strong>REFERENCIA: </strong><%= @factura.referencia %></p>
+<p><strong>CLIENTE: </strong><%= @factura.cliente %></p>
+<p><strong>CONTACTO: </strong><%= @factura.contacto %></p>
+<p><strong>TIPO DE SERVIÇO: </strong><%= @factura.tipo_de_servico %></p>
+<p><strong>RESPONSÁVEL: </strong><%= @factura.responsavel %></p>
