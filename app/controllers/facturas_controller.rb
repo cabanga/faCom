@@ -14,6 +14,16 @@ class FacturasController < ApplicationController
   # GET /facturas/1
   # GET /facturas/1.json
   def show
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = DetalheDaFactura.new(@factura, view_context)
+          send_data pdf.render, filename: "factura_#{@factura.referencia}.pdf",
+          type: "application/pdf", disposition: "inline"
+      end
+    end
+
   end
 
   # GET /facturas/new
@@ -30,10 +40,10 @@ class FacturasController < ApplicationController
   def create
     @factura = Factura.new(factura_params)
 
-    unless current_usuario.super_admin?
+    #unless current_usuario.super_admin?
       @factura.empresa_id = current_usuario.empresa.id
       @factura.responsavel = current_usuario.nome
-    end
+    #end
 
     @factura.referencia = @factura.gera_referencia
 
