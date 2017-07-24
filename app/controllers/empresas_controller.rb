@@ -72,6 +72,12 @@ class EmpresasController < ApplicationController
   # DELETE /empresas/1
   # DELETE /empresas/1.json
   def destroy
+    @funcionarios = Funcionario.where(empresa_id: @empresa.id)
+
+    @funcionarios.destroy_all unless @funcionarios.blank?
+
+    # @funcionarios.each { |f| f.destroy unless f.blank? } unless @funcionarios.blank?
+
     @empresa.destroy
     respond_to do |format|
       format.html { redirect_to empresas_url, notice: 'Empresa was successfully destroyed.' }

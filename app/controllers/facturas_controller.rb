@@ -15,14 +15,14 @@ class FacturasController < ApplicationController
   # GET /facturas/1.json
   def show
 
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = DetalheDaFactura.new(@factura, view_context)
-          send_data pdf.render, filename: "factura_#{@factura.referencia}.pdf",
-          type: "application/pdf", disposition: "inline"
-      end
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     pdf = DetalheDaFactura.new(@factura, view_context)
+    #       send_data pdf.render, filename: "factura_#{@factura.referencia}.pdf",
+    #       type: "application/pdf", disposition: "inline"
+    #   end
+    # end
 
   end
 
