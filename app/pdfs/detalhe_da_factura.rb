@@ -2,15 +2,17 @@ class DetalheDaFactura < Prawn::Document
   include ApplicationHelper
   Prawn::Font::AFM.hide_m17n_warning = true
   def initialize(factura, view)
-    super(top_margin: 70)
+    super(top_margin: 40)
     @empresa = factura.empresa
     @factura = factura
     @view = view
 
+    referencia
     logotipo
+    move_up 15
     info_da_empresa
     dados_do_cliente
-    move_down 100
+    move_down 70
     cabecalho_da_factura
     # quadro_de_itens
     move_down 90
@@ -18,7 +20,7 @@ class DetalheDaFactura < Prawn::Document
     referencia_do_total
 
     rodape
-    transparent(1) { stroke_bounds }
+    #transparent(1) { stroke_bounds }
 
   end
 
@@ -59,14 +61,14 @@ class DetalheDaFactura < Prawn::Document
     end
 
     def cabecalho_da_factura
-      table([['', '', '', '', 'Data']],
+      table([['Tipo de Serviço', '', '', '', 'Data']],
         position: 0,
         :column_widths => [ 108, 108, 108, 150, 66],
         :cell_style =>  {:borders => [:top], :align => :left, :size => 8,:font_style => :bold, height: 18})do
           row(0).border_width = 1.3
         end
 
-        table([['', '', '', "", "#{Time.now.strftime('%d-%m-%Y')}"]],
+        table([["#{@factura.tipo_de_servico}", '', '', "", "#{Time.now.strftime('%d-%m-%Y')}"]],
         position: 0,
         :column_widths => [ 108, 108, 108, 150, 66],
         :cell_style =>  {:borders => [], :align => :left, :size => 7, height: 30, :padding => [0, 0, 0, 5]}) do
@@ -133,24 +135,25 @@ class DetalheDaFactura < Prawn::Document
     end
 
     def rodape
-      #estado_factura
+      estado_factura
       texto_de_rodape
     end
-    #
-    # def estado_factura
-    #   bounding_box([458, bounds.bottom + 35], :width => 83, :height => 10, :font_style => :bold) do
-    #     text 'Estado da Factura', size: 7, :align => :center
-    #   end
-    #   case @pagamento.estado
-    #     when 'pago'
-    #       table([[@pagamento.estado.pt]],  position: 460,
-    #         :column_widths => [80],
-    #         :cell_style =>  {:font_style => :bold,:background_color => '5cb85c', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
-    #     else 'nao_pago'
-    #       table([[@pagamento.estado.pt]],  position: 460,
-    #         :column_widths => [80],
-    #         :cell_style =>  {:font_style => :bold, :background_color => 'f0ad4e', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
-    #   end
-    # end
+
+    def estado_factura
+      bounding_box([458, bounds.bottom + 35], :width => 83, :height => 10, :font_style => :bold) do
+        text 'Estado da Factura', size: 7, :align => :center
+      end
+
+      if (@factura.is_payd)
+        table([["Pago"]],  position: 460,
+          :column_widths => [80],
+          :cell_style =>  {:font_style => :bold,:background_color => '5cb85c', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
+      else
+        table([["Não Pago"]],  position: 460,
+          :column_widths => [80],
+          :cell_style =>  {:font_style => :bold, :background_color => 'f0ad4e', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
+      end
+
+    end
 
 end

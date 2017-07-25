@@ -53,7 +53,8 @@ gem "nested_form"
 gem 'prawn'
 gem 'prawn-table'
 
-gem "rb-fsevent"
+gem 'rb-fsevent', '~> 0.9.7'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

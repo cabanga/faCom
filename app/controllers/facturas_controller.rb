@@ -15,14 +15,14 @@ class FacturasController < ApplicationController
   # GET /facturas/1.json
   def show
 
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     pdf = DetalheDaFactura.new(@factura, view_context)
-    #       send_data pdf.render, filename: "factura_#{@factura.referencia}.pdf",
-    #       type: "application/pdf", disposition: "inline"
-    #   end
-    # end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = DetalheDaFactura.new(@factura, view_context)
+          send_data pdf.render, filename: "factura_#{@factura.referencia}.pdf",
+          type: "application/pdf", disposition: "inline"
+      end
+    end
 
   end
 
@@ -102,6 +102,6 @@ class FacturasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def factura_params
-      params.require(:factura).permit(:referencia, :cliente, :contacto, :tipo_de_servico, :responsavel, :empresa_id)
+      params.require(:factura).permit(:referencia, :cliente, :contacto, :tipo_de_servico, :responsavel, :empresa_id, :is_payd)
     end
 end
