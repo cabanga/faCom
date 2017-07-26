@@ -1,11 +1,11 @@
 class AprovarRegistoMailer < ApplicationMailer
   default from: "facomtechys@gmail.com"
 
+  def aprovar_registo(usuario)
+    @assunto = "Aprovação de Registo"
 
-
-  def aprovar_registo(user)
-    @user = user
-    mail(to: @user.email, subject: 'Registo Aprovado')
+    @usuario = usuario
+    mail(to: @usuario.email, subject: @assunto)
   end
 
 end

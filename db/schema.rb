@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628205258) do
+ActiveRecord::Schema.define(version: 20170726182354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20170628205258) do
     t.index ["empresa_id"], name: "index_funcionarios_on_empresa_id", using: :btree
   end
 
+  create_table "item_facturas", force: :cascade do |t|
+    t.string   "codigo"
+    t.integer  "quantidade"
+    t.decimal  "preco_unitario"
+    t.string   "descricao"
+    t.decimal  "preco_total"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "registos", force: :cascade do |t|
     t.string   "nome_user"
     t.string   "nome_empresa"
@@ -100,6 +110,7 @@ ActiveRecord::Schema.define(version: 20170628205258) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "senha_provisoria"
     t.index ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
     t.index ["empresa_id"], name: "index_usuarios_on_empresa_id", using: :btree
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
