@@ -4,8 +4,10 @@ class Registo < ApplicationRecord
   enum estado: {em_espera: 0, aprovado: 1}
 
   def criar_empresa
-    empresa = Empresa.create(nome: "#{self.nome_empresa}", telemovel: "#{self.telemovel}", telefone: "", email: "#{self.email}", estado: 1, is_active: true, cidade_id: self.cidade)
-    usuario = Usuario.create(nome: "#{self.nome_user}", role: 1, telemovel: "#{self.telemovel}", email: "#{self.email}", password: 'q1w2e3r4t5', password_confirmation: 'q1w2e3r4t5', empresa_id: empresa.id)
+    # empresa = Empresa.create(nome: "#{self.nome_empresa}", telemovel: "#{self.telemovel}", telefone: "", email: "#{self.email}", estado: 1, is_active: true, cidade_id: self.cidade)
+    # usuario = Usuario.create(nome: "#{self.nome_user}", role: 1, telemovel: "#{self.telemovel}", email: "#{self.email}", password: 'q1w2e3r4t5', password_confirmation: 'q1w2e3r4t5', empresa_id: empresa.id)
+
+    AprovarRegistoMailer.sample_email(usuario)
 
     p usuario
   end
