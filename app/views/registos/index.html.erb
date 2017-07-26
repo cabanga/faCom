@@ -25,7 +25,7 @@
         <td><%= registo.telemovel %></td>
         <td><%= registo.email %></td>
         <td><%= registo.estado %></td>
-        <% if registo.estado == 0 %>
+        <% unless registo.estado == 0 %>
           <td class="text-right"><%= link_to "Aprovar", aprovar_registo_url(registo), method: :patch, class:"btn btn-success btn-xs", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %></td>
         <% end %>
         <td><%= link_to 'Apagar', registo, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>

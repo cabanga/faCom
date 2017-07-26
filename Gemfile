@@ -46,6 +46,14 @@ gem 'cancancan', '~> 1.16'
 gem 'devise-i18n'
 gem 'newrelic_rpm'
 gem 'omniauth-facebook'
+gem "nested_form"
+
+gem "nested_form"
+
+gem 'prawn'
+gem 'prawn-table'
+
+gem 'rb-fsevent', '~> 0.9.7'
 
 
 # Use Capistrano for deployment
