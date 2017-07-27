@@ -1,77 +1,13 @@
-<html style="width: 100%;">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Facom</title>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
   </head>
-  <body style="width: 100%;margin: 0;padding: 0;background: #fff;font-family: roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;min-width: 100%!important;">
-    <table style="width: 100%;font-size: 14px;border: 0;">
-      <tr>
-        <td>
-          <table class="col-table header" align="center" style="font-size: 14px;border: 1px;width: 100%;max-width: 650px; ">
-            <tr>
-              <td>
-                <table style="font-size: 14px;border: 0;"><tr><td height="20"></td><td></td></tr></table>
-                  <p style="text-align: center;font-weight: lighter;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0px;">
-                    <%= link_to root_url, class:"thumbnail icones" do %>
-                      <img src="<%=root_url%>assets/facom.png" width="80px" height="auto" alt="">
-                    <% end %>
-                  </p>
-                <table style="font-size: 14px;border: 0;"><tr><td height="20"></td><td></td></tr></table>
-                <hr width="650px" size="4px" style="background-color: #d9edf7; border: 0;">
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
 
-      <tr>
-        <td>
-          <table align="center" cellpadding="10px" style="font-size: 14px; border: 1px; width: 100%; max-width: 650px;">
-            <tr>
-              <td  style="padding: 0px">
-                <p style="font-size: 20px; color: #777777!important;text-align: left;font-weight: light;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;">
-                  <%= @assunto.split(' ').map(&:capitalize).join(' ') %>
-                </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <table class="col-table" align="center" style="font-size: 14px;border: 1px;width: 100%;max-width: 650px;">
-            <tr>
-              <td>
-                <br>
-                <%= yield %>
-                <table style="font-size: 14px;border: 0;"><tr><td height="30"></td><td></td></tr></table>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <table valign="bottom" align="center" background="#d9edf7" cellpadding="10px" style="font-size: 14px; border: 1px; width: 650px; max-width: 325px; ">
-            <tr>
-              <hr width="650px" size="4px" style="background-color: #d9edf7; border: 0;">
-                <% if @empresa != nil %>
-                  <p style="color: #555555;font-size: 10px;text-align: center;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;"> <%= @empresa.telemovel %> - <%= @empresa.email %></p>
-                  <p style="color: #555555;font-size: 10px;text-align: center;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;"> <%= @empresa.endereco %></p>
-                <%elsif @registo != nil %>
-                  <p style="color: #555555;font-size: 10px;text-align: center;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;"> <%= @registo.telemovel %></p>
-                  <p style="color: #555555;font-size: 10px;text-align: center;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;"> <%= @registo.email %></p>
-                  <br>
-                <%end%>
-                <p style="color: #555555;font-size: 10px;text-align: center;margin-top: 0;margin-bottom: 0;padding-top: 0;padding-bottom: 0;">www.meucondo.co.ao</p>
-            </tr>
-          </table>
-        </td>
-      </tr>
-
-    </table>
+  <body>
+    <%= yield %>
   </body>
 </html>

@@ -19,7 +19,7 @@ class Registo < ApplicationRecord
 
     usuario.save
 
-    AprovarRegistoMailer.aprovar_registo(usuario)
+    RegistoMailer.aprovar_registo(usuario).deliver
 
   end
 

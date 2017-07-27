@@ -15,35 +15,19 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
 
 
-  # ==============================================================================
+# ==============================================================================
 
-    # config.action_mailer.default_url_options = { host: 'fa-com.herokuapp.com'}
-    # config.action_mailer.delivery_method = :smtp
-    # config.active_record.dump_schema_after_migration = false
-    # config.action_mailer.default :charset => "utf-8"
-    #
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'fa-com.herokuapp.com',
+    user_name:            ENV["GMAIL_USERNAME"],
+    password:             ENV["GMAIL_PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 
-    config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "gmail.com",
-      user_name: "facomtechys@gmail.com",
-      password: "21cabanga21",
-      enable_starttls_auto: true,
-      authentication: "plain"
-    }
-
-    # config.action_mailer.smtp_settings = {
-    #   address: "smtp.gmail.com",
-    #   port: 587,
-    #   domain: "fa-com.herokuapp.com",
-    #   authentication: "plain",
-    #   enable_starttls_auto: true,
-    #   user_name: ENV["GMAIL_USERNAME"],
-    #   password: ENV["GMAIL_PASSWORD"]
-    # }
-
-    # ==============================================================================
+# ==============================================================================
 
 
   # Disable serving static files from the `/public` folder by default since

@@ -40,6 +40,9 @@ class ItemFacturasController < ApplicationController
         @item_factura.preco_total = @item_factura.quantidade * @item_factura.preco_unitario
         @item_factura.save
 
+        #send mailer
+
+        
         format.html { redirect_to @factura, notice: "Item adicionado na factura Nº #{@factura.referencia} com sucesso." }
         format.json { render :show, status: :created, location: @item_factura }
       else
