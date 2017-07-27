@@ -87,31 +87,19 @@ Rails.application.configure do
 
 # ==============================================================================
 
-config.action_mailer.default_url_options = { :host => 'fa-com.herokuapp.com' }
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true
-config.action_mailer.raise_delivery_errors = false
-config.action_mailer.default :charset => "utf-8"
-config.action_mailer.smtp_settings = {
-  address: "facomtechys@gmail.com",
-  port: 587,
-  domain: "fa-com.herokuapp.com",
-  authentication: "plain",
-  enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
-}
-
-  # config.action_mailer.delivery_method = :smtp
-  # # SMTP settings for gmail
-  # config.action_mailer.smtp_settings = {
-  # :address              => "smtp.gmail.com",
-  # :port                 => 587,
-  # :user_name            => ENV['gmail_username'],
-  # :password             => ENV['gmail_password'],
-  # :authentication       => "plain",
-  # :enable_starttls_auto => true
-  # }
-
+# Do not dump schema after migrations.
+  config.action_mailer.default_url_options = { host: 'fa-com.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "fa-com.herokuapp.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
+  }
 
 end
