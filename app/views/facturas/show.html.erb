@@ -4,14 +4,20 @@
   <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_factura_path(@factura) %> </li>
   <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @registo, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
   <li role="presentation"> <%= link_to "<span>#{icon_da_factura(@factura.is_payd)} #{texto_da_factura(@factura.is_payd)} </span>".html_safe, pagar_factura_url(@factura), method: :patch, class:"#{cor_do_activar_e_desactivar(@factura.is_payd)}", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %> </li>
-
+  <li role="presentation"><a href="#itens-da-factura" aria-controls="Itens da Factura" role="tab" data-toggle="tab">Itens da Factura</a></li>
 </ul>
+
 <br>
 
-<p><strong>REFERENCIA: </strong><%= @factura.referencia %></p>
-<p><strong>CLIENTE: </strong><%= @factura.cliente %></p>
-<p><strong>CONTACTO: </strong><%= @factura.contacto %></p>
-<p><strong>TIPO DE SERVIÇO: </strong><%= @factura.tipo_de_servico %></p>
-<p><strong>RESPONSÁVEL: </strong><%= @factura.responsavel %></p>
 
+<div class="tab-content"> <!-- Tab panes -->
+  <div role="tabpanel" class="tab-pane" id="itens-da-factura">
+    <%= render 'item_facturas/form' %>
+    <br><br>
+    <%= render 'itens_da_factura' %>
+  </div>
+</div>
+
+<br>
 <iframe src="<%= factura_url(@factura, format: "pdf")%>" width="100%" height="825px" class=""></iframe>
+<br>

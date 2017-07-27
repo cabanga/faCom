@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :empresas
   resources :cidades
 
+  resources :facturas do
+    resources :item_facturas
+  end
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

@@ -14,6 +14,7 @@ class FacturasController < ApplicationController
   # GET /facturas/1
   # GET /facturas/1.json
   def show
+    @item_facturas = @factura.item_facturas.order('id DESC')
 
     respond_to do |format|
       format.html
@@ -77,6 +78,8 @@ class FacturasController < ApplicationController
 
     if (@factura.is_payd)
       flash[:notice] = 'A factura foi paga com sucesso'
+      AprovarRegistoMailer.aprovar_registo(current_usuario)
+
     else
       flash[:notice] = 'A factura foi cancelada'
     end

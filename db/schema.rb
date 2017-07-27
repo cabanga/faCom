@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726182354) do
+ActiveRecord::Schema.define(version: 20170726192241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,8 +66,10 @@ ActiveRecord::Schema.define(version: 20170726182354) do
     t.decimal  "preco_unitario"
     t.string   "descricao"
     t.decimal  "preco_total"
+    t.integer  "factura_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["factura_id"], name: "index_item_facturas_on_factura_id", using: :btree
   end
 
   create_table "registos", force: :cascade do |t|
@@ -119,6 +121,7 @@ ActiveRecord::Schema.define(version: 20170726182354) do
   add_foreign_key "empresas", "cidades"
   add_foreign_key "facturas", "empresas"
   add_foreign_key "funcionarios", "empresas"
+  add_foreign_key "item_facturas", "facturas"
   add_foreign_key "registos", "cidades"
   add_foreign_key "usuarios", "empresas"
 end
