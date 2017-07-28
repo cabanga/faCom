@@ -78,8 +78,6 @@ class FacturasController < ApplicationController
 
     if (@factura.is_payd)
       flash[:notice] = 'A factura foi paga com sucesso'
-      AprovarRegistoMailer.aprovar_registo(current_usuario)
-
     else
       flash[:notice] = 'A factura foi cancelada'
     end
