@@ -10,7 +10,7 @@
   <thead>
     <tr>
       <th>NOME</th>
-      <th>TELEMÓVEL</th>
+      <th class="text-right">TELEMÓVEL</th>
       <th>TIPO DE IDENTIFICAÇÃO</th>
       <th>NÚMERO DE IDENTIFICAÇÃO</th>
       <% if current_usuario.super_admin? %>
@@ -24,12 +24,12 @@
     <% @funcionarios.each do |funcionario| %>
       <tr data-href="<%= funcionario_url(funcionario)%>">
         <td><%= funcionario.nome %></td>
-        <td><%= funcionario.telemovel %></td>
+        <td class="text-right"><%= formatar_numero_telefone(funcionario.telemovel) %></td>
         <td><%= funcionario.tipo_de_ident %></td>
         <td><%= funcionario.numero_ident %></td>
 
         <% if current_usuario.super_admin? %>
-          <td><!--<%= funcionario.empresa %>--></td>
+          <td><%= funcionario.empresa.nome.upcase %></td>
         <% end %>
         <td class="text-right"><%= link_to 'Apagar', funcionario, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
       </tr>

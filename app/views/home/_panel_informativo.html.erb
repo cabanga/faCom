@@ -1,0 +1,76 @@
+<div class="hidden-xs col-md-4">
+  <div class="panel panel-left panel-new">
+    <div class="panel-heading panel-heading-new">
+      <div class="row">
+        <div class="col-xs-3">
+          <span class="fa fa-file-pdf-o fa-5x"></span>
+        </div>
+        <div class="col-xs-9 text-right">
+          <h3 class=""><%= @quantidade_de_facturas_de_hoje.count %></h3>
+          <p class="">Facturas de <%= Time.now.strftime('%d-%m-%Y') %></p>
+
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer panel-left-footer">
+      <%= link_to facturas_url  do %>
+        <span class="pull-left text-color">Vêr Detalhes</span>
+        <span class="pull-right"><span class="fa fa-arrow-circle-right text-color"></span></span>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="hidden-xs col-md-4">
+  <div class="panel panel-center panel-new">
+    <div class="panel-heading panel-heading-new">
+      <div class="row">
+        <div class="col-xs-3">
+          <span class="fa fa-users fa-5x"></span>
+        </div>
+        <div class="col-xs-9 text-right">
+          <h3 class=""><%= @quantidade_de_funcionarios.count %></h3>
+          <p class="">Funcionários</p>
+
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer panel-left-center">
+      <%= link_to funcionarios_url  do %>
+        <span class="pull-left text-color">Vêr Detalhes</span>
+        <span class="pull-right"><span class="fa fa-arrow-circle-right text-color"></span></span>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<div class="hidden-xs col-md-4">
+  <div class="panel panel-right panel-new">
+    <div class="panel-heading panel-heading-new">
+      <div class="row">
+        <div class="col-xs-3">
+          <span class="fa fa-bar-chart fa-5x"></span>
+        </div>
+        <div class="col-xs-9 text-right">
+          <h3 class="">30%</h3>
+          <p class="">Meta de Jun/2017</p>
+
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer panel-left-right">
+      <%= link_to "#"  do %>
+        <span class="pull-left text-color">Vêr Detalhes</span>
+        <span class="pull-right"><span class="fa fa-arrow-circle-right text-color"></span></span>
+        <div class="clearfix"></div>
+      <% end %>
+    </div>
+  </div>
+</div>

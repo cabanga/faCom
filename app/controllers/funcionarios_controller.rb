@@ -5,7 +5,7 @@ class FuncionariosController < ApplicationController
   # GET /funcionarios.json
   def index
     redirect_to new_usuario_session_url unless usuario_signed_in?
-    
+
     if (current_usuario.super_admin?)
       @funcionarios = Funcionario.all
     else
@@ -33,9 +33,9 @@ class FuncionariosController < ApplicationController
   def create
     @funcionario = Funcionario.new(funcionario_params)
 
-    if (current_usuario.admin?)
+    # if (current_usuario.admin?)
       @funcionario.empresa_id = current_usuario.empresa.id
-    end
+    # end
 
     respond_to do |format|
       if @funcionario.save

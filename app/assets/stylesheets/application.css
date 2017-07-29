@@ -26,6 +26,14 @@
     font-family: 'ProximaNova-Light';
 }
 
+.panel-new{
+  -webkit-box-shadow: 0 1px 1px #999999!important;
+}
+
+.panel-heading{
+  background-color: #d9edf7; 
+}
+
 .profile-img-card {
   text-align: right;
     width: 117px;

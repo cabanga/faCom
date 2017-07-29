@@ -1,6 +1,7 @@
 class Empresa < ApplicationRecord
   belongs_to :cidade
-  belongs_to :funcionarios
+  has_many :funcionarios
+
   mount_uploader :logotipo, LogotipoEmpresaUploader
 
   def activar_e_desactivar_empresa
