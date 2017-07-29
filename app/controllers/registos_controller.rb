@@ -38,6 +38,8 @@ class RegistosController < ApplicationController
         format.json { render :show, status: :created, location: @registo }
 
         RegistoMailer.novo_registo(@registo).deliver
+        RegistoMailer.novo_registo_para_equipa(@registo).deliver
+
 
       else
         format.html { render :new }
