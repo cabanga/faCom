@@ -1,6 +1,7 @@
 class Empresa < ApplicationRecord
   belongs_to :cidade
   has_many :funcionarios
+  has_many :Usuarios
 
   mount_uploader :logotipo, LogotipoEmpresaUploader
 

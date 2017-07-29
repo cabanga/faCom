@@ -88,6 +88,8 @@ class FacturasController < ApplicationController
   # DELETE /facturas/1
   # DELETE /facturas/1.json
   def destroy
+    @item_facturas = @factura.item_facturas
+    @item_facturas.destroy_all unless @item_facturas.blank?
     @factura.destroy
     respond_to do |format|
       format.html { redirect_to facturas_url, notice: 'Factura was successfully destroyed.' }
