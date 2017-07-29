@@ -34,6 +34,8 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
+
+        @empresa.cria_usuario
         format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
         format.json { render :show, status: :created, location: @empresa }
       else
