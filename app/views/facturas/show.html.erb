@@ -1,7 +1,7 @@
 <%= breadcrumb_index([link_to('Home', root_url), link_to('Facturas', facturas_path), "Factura Nº #{@factura.referencia}"]) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_factura_path(@factura) %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_factura_path(@factura) %> </li>
   <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @registo, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
   <li role="presentation"> <%= link_to "<span>#{icon_da_factura(@factura.is_payd)} #{texto_da_factura(@factura.is_payd)} </span>".html_safe, pagar_factura_url(@factura), method: :patch, class:"#{cor_do_activar_e_desactivar(@factura.is_payd)}", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %> </li>
   <li role="presentation"><a href="#itens-da-factura" aria-controls="Itens da Factura" role="tab" data-toggle="tab">Itens da Factura</a></li>
@@ -9,9 +9,8 @@
 
 <br>
 
-
 <div class="tab-content"> <!-- Tab panes -->
-  <div role="tabpanel" class="tab-pane" id="itens-da-factura">
+  <div class="active" role="tabpanel" class="tab-pane" id="itens-da-factura">
     <%= render 'item_facturas/form' %>
     <br><br>
     <%= render 'itens_da_factura' %>

@@ -14591,6 +14591,10 @@ jQuery(function() {
 
 
 }).call(this);
+(function() {
+
+
+}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14641,6 +14645,9 @@ $(document).ready(function(){
   $('#botao_cancelar').click(function(){
     $('#myModal').modal('hide');
   });
+
+
+// ==========================================================================
 
 
 })

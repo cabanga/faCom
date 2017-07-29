@@ -16,8 +16,6 @@ class ItemFacturasController < ApplicationController
   # GET /item_facturas/new
   def new
     @item_factura = @factura.item_facturas.new
-
-    # @item_factura = ItemFactura.new
   end
 
   # GET /item_facturas/1/edit
@@ -29,8 +27,6 @@ class ItemFacturasController < ApplicationController
   def create
     @factura = Factura.find(params[:factura_id])
 
-    # @item_factura = @factura.item_facturas.new(item_factura_params)
-    p item_factura_params
     @item_factura = ItemFactura.new(item_factura_params)
     @item_factura.factura_id = @factura.id
 
@@ -40,14 +36,13 @@ class ItemFacturasController < ApplicationController
         @item_factura.preco_total = @item_factura.quantidade * @item_factura.preco_unitario
         @item_factura.save
 
-        #send mailer
+        actualiza_a_factura
 
-        
         format.html { redirect_to @factura, notice: "Item adicionado na factura Nº #{@factura.referencia} com sucesso." }
         format.json { render :show, status: :created, location: @item_factura }
       else
-        format.html { render :new }
-        format.json { render json: @item_factura.errors, status: :unprocessable_entity }
+        format.html { redirect_to @factura }
+        flash[:alert] = "O Campo descrição ou Preço Uni. não pode estar em branco"
       end
     end
   end
@@ -70,11 +65,24 @@ class ItemFacturasController < ApplicationController
   # DELETE /item_facturas/1.json
   def destroy
     @item_factura.destroy
+    actualiza_a_factura
+
     respond_to do |format|
       format.html { redirect_to @factura, notice: 'Item Removido com sucesso.' }
       format.json { head :no_content }
     end
   end
+
+
+  def actualiza_a_factura
+    valor_total = 0
+
+    @factura.item_facturas.each do |item|
+      valor_total += item.preco_unitario
+    end
+    @factura.update_columns(valor_total: valor_total)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

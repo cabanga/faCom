@@ -14587,6 +14587,14 @@ jQuery(function() {
 
 
 }).call(this);
+(function() {
+
+
+}).call(this);
+(function() {
+
+
+}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14638,6 +14646,23 @@ $(document).ready(function(){
     $('#myModal').modal('hide');
   });
 
+
+// ==========================================================================
+
+var tab_activa = get_param_value('active_tab');
+if(tab_activa != undefined && tab_activa != null && tab_activa != ""){
+  $(".nav-tabs a[href='" + tab_activa + "'], .nav-tabs a[href='#" + tab_activa + "']").each(function(){
+    $(this).tab("show");
+  });
+  // Adiciona o mesmo nos hidden input active tab
+  $('input[type="hidden"][name="active_tab"]').each(function(){
+    $(this).attr('value', tab_activa);
+  });
+  // Adicona o mesmo em todos os links da págin
+  $('a[href^="http://"]').each(function(){
+    adicionar_param('active_tab', tab_activa, $(this));
+  });
+}
 
 })
 ;

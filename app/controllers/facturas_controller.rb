@@ -50,7 +50,7 @@ class FacturasController < ApplicationController
 
     respond_to do |format|
       if @factura.save
-        format.html { redirect_to @factura, notice: 'Factura was successfully created.' }
+        format.html { redirect_to @factura, notice: 'Factura adicionada com sucesso.' }
         format.json { render :show, status: :created, location: @factura }
       else
         format.html { render :new }
@@ -64,7 +64,7 @@ class FacturasController < ApplicationController
   def update
     respond_to do |format|
       if @factura.update(factura_params)
-        format.html { redirect_to @factura, notice: 'Factura was successfully updated.' }
+        format.html { redirect_to @factura, notice: 'Factura actualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @factura }
       else
         format.html { render :edit }
@@ -103,6 +103,6 @@ class FacturasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def factura_params
-      params.require(:factura).permit(:referencia, :cliente, :contacto, :tipo_de_servico, :responsavel, :empresa_id, :is_payd)
+      params.require(:factura).permit(:referencia, :cliente, :contacto, :tipo_de_servico, :responsavel, :empresa_id, :is_payd, :percentagem_imposto, :valor_total, :desconto)
     end
 end

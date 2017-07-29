@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726192241) do
+ActiveRecord::Schema.define(version: 20170729082411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,12 @@ ActiveRecord::Schema.define(version: 20170726192241) do
     t.string   "tipo_de_servico"
     t.string   "responsavel"
     t.integer  "empresa_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "is_payd",         default: false, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "is_payd",             default: false, null: false
+    t.integer  "percentagem_imposto", default: 0,     null: false
+    t.decimal  "valor_total",         default: "0.0", null: false
+    t.decimal  "desconto",            default: "0.0", null: false
     t.index ["empresa_id"], name: "index_facturas_on_empresa_id", using: :btree
   end
 
