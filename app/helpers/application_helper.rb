@@ -198,7 +198,7 @@ module ApplicationHelper
   def logotipo_da_empresa
     return if @empresa.blank?
 
-    bounding_box([0, cursor + 30], :width => 100, :height => 70) do
+    bounding_box([0, cursor + 30], :width => 100, :height => 100) do
       logotipo = @empresa.logotipo.present? ? @empresa.logotipo.to_s : "#{Rails.root}/app/assets/images/facom.png"
 
       if Rails.env.development? || Rails.env.test? # Tese para os ambientes

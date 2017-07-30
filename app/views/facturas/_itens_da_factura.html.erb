@@ -2,10 +2,10 @@
   <thead>
     <tr>
       <th>CÓDIGO</th>
-      <th>QUANT.</th>
+      <th class="text-center">QUANTIDADE</th>
       <th>DESCRIÇÃO</th>
-      <th>PREÇO UNIT.</th>
-      <th>PREÇO TOTAL</th>
+      <th class="text-right">PREÇO UNIT.</th>
+      <th class="text-right">PREÇO TOTAL</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,10 +14,10 @@
     <% @item_facturas.each do |item_factura| %>
     <tr>
       <td><%= item_factura.codigo %></td>
-      <td><%= item_factura.quantidade %></td>
+      <td class="text-center"><%= item_factura.quantidade %></td>
       <td><%= item_factura.descricao %></td>
-      <td><%= item_factura.preco_unitario %></td>
-      <td><%= item_factura.preco_total %></td>
+      <td class="text-right"><%= item_factura.preco_unitario %></td>
+      <td class="text-right"><%= item_factura.preco_total %></td>
 
       <td class="text-right">
         <%= link_to factura_item_factura_path(@factura, item_factura), class:"fa fa-times-circle fa-lg", style:"color: #ce1b1b;",method: :delete do %>
