@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     resources :item_facturas
   end
 
+  resources :empresas do
+    resources :tipos_de_impostos
+  end
+
+
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'

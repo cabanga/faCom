@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @tipo_de_imposto.tipo %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @tipo_de_imposto.motivo %>
+</p>
+
+<p>
+  <strong>Percentagem:</strong>
+  <%= @tipo_de_imposto.percentagem %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @tipo_de_imposto.valor %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @tipo_de_imposto.empresa %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_de_imposto_path(@tipo_de_imposto) %> |
+<%= link_to 'Back', tipos_de_impostos_path %>

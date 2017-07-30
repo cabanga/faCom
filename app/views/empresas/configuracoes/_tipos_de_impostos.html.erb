@@ -1,0 +1,36 @@
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-plus" aria-hidden="true"></i> Imposto</span>'.html_safe, new_empresa_tipo_de_imposto_path(@empresa) %> </li>
+</ul>
+
+<br>
+
+<div class="tab-content"> <!-- Tab panes -->
+  <div class="active" role="tabpanel" class="tab-pane" id="imposto-associado">
+
+    <table class="table table-hover">
+
+      <thead>
+        <tr>
+          <th>TIPO</th>
+          <th>MOTIVO</th>
+          <th>PERCENTAGEM</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @tipos_de_impostos.each do |tipo_de_imposto| %>
+        <tr data-href="<%= empresa_tipo_de_imposto_url(tipo_de_imposto)%>">
+            <td><%= tipo_de_imposto.tipo %></td>
+            <td><%= tipo_de_imposto.motivo %></td>
+            <td><%= "#{tipo_de_imposto.percentagem} %" %></td>
+            <td class="text-right"><%= link_to 'Apagar', empresa_tipo_de_imposto_url(@empresa), method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+  </div>
+</div>

@@ -16,6 +16,7 @@ class EmpresasController < ApplicationController
   # GET /empresas/1
   # GET /empresas/1.json
   def show
+    @tipos_de_impostos = @empresa.tipos_de_impostos.order('id DESC')
   end
 
   # GET /empresas/new

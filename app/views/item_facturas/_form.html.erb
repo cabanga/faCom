@@ -1,29 +1,27 @@
 <%= simple_form_for([@factura, ItemFactura.new]) do |f| %>
-<%= f.error_notification %>
+  <%= f.error_notification %>
 
-<div class="flex-row">
-  <div class="flex-col-xs">
-    <%= f.input :codigo, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: K40', label: "Código"  %>
+  <div class="flex-row">
+    <div class="flex-col-xs">
+      <%= f.input :codigo, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: K40', label: "Código"  %>
+    </div>
+
+    <div class="flex-col-xs">
+      <%= f.input :quantidade, :input_html => {class:'form-control '}, placeholder: 'ex: 1 ou 4', label: "Quant."  %>
+    </div>
+
+    <div class="flex-col-xs">
+      <%= f.input :descricao, :input_html => {class:'form-control '}, placeholder: 'ex: ...', label: "Descrição"  %>
+    </div>
+
+    <div class="flex-col-xs">
+      <%= f.input :preco_unitario, :input_html => {class:'form-control '}, placeholder: 'ex: 1000', label: "Preço Uni."  %>
+    </div>
+
+    <div class="flex-col-xs text-right" style="padding-top: 15px">
+      <%= f.button :submit, "Adicionar item", class:"btn btn-success btn-sm"  %>
+    </div>
+
   </div>
-
-  <div class="flex-col-xs">
-    <%= f.input :quantidade, :input_html => {class:'form-control '}, placeholder: 'ex: 1 ou 4', label: "Quant."  %>
-  </div>
-
-  <div class="flex-col-xs">
-    <%= f.input :descricao, :input_html => {class:'form-control '}, placeholder: 'ex: ...', label: "Descrição"  %>
-  </div>
-
-  <div class="flex-col-xs">
-    <%= f.input :preco_unitario, :input_html => {class:'form-control '}, placeholder: 'ex: 1000', label: "Preço Uni."  %>
-  </div>
-
-  <div class="flex-col-xs text-right" style="padding-top: 15px">
-    <%= f.button :submit, "Adicionar item", class:"btn btn-success btn-sm"  %>
-  </div>
-
-</div>
-
-
 
 <% end %>
