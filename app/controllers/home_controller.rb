@@ -5,8 +5,8 @@ class HomeController < ApplicationController
   def index
     redirect_to new_usuario_session_url unless usuario_signed_in?
 
-    @quantidade_de_facturas_de_hoje = Factura.where(empresa_id: current_usuario.empresa_id)
-    @quantidade_de_funcionarios = Funcionario.where(empresa_id: current_usuario.empresa_id)
+    @quantidade_de_facturas_de_hoje =  Factura.where(empresa_id: current_usuario.empresa_id)
+    @quantidade_de_funcionarios =  Funcionario.where(empresa_id: current_usuario.empresa_id)
   end
 
 

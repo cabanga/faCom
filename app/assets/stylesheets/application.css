@@ -31,7 +31,7 @@
 }
 
 .panel-heading{
-  background-color: #d9edf7; 
+  background-color: #d9edf7;
 }
 
 .profile-img-card {
@@ -69,11 +69,11 @@
 }
 
 .color-activar{
-  color: #3183d8;
+  color: #3183d8!important;
 }
 
 .color-desactivar{
-  color: #d8ac31
+  color: #d8ac31!important;
 }
 
 .link_sem_decoracao {

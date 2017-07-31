@@ -20,11 +20,12 @@
 
       <tbody>
         <% @tipos_de_impostos.each do |tipo_de_imposto| %>
-        <tr data-href="<%= empresa_tipo_de_imposto_url(tipo_de_imposto)%>">
+        <tr data-href="#">
             <td><%= tipo_de_imposto.tipo %></td>
             <td><%= tipo_de_imposto.motivo %></td>
             <td><%= "#{tipo_de_imposto.percentagem} %" %></td>
-            <td class="text-right"><%= link_to 'Apagar', empresa_tipo_de_imposto_url(@empresa), method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
+            <td class="text-right"> <%= link_to "<span>#{icon_activar_e_desactivar(tipo_de_imposto.is_active)} #{esta_activado(tipo_de_imposto.is_active)} </span>".html_safe, empresa_activar_e_desactivar_url(@empresa.id, tipo_de_imposto), method: :patch, class:"#{cor_do_activar_e_desactivar(tipo_de_imposto.is_active)}", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %> </td>
+            <td class="text-right"><%= link_to 'Apagar', empresa_tipo_de_imposto_url(@empresa.id, tipo_de_imposto), method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
 
           </tr>
         <% end %>

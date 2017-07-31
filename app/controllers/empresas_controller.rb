@@ -10,7 +10,6 @@ class EmpresasController < ApplicationController
       @empresa = Empresa.find_by(id: current_usuario.empresa.id)
       redirect_to @empresa
     end
-
   end
 
   # GET /empresas/1
