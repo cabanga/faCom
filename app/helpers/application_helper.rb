@@ -198,20 +198,20 @@ module ApplicationHelper
   def logotipo_da_empresa
     return if @empresa.blank?
 
-     bounding_box([10, cursor + 30], :width => 80, :height => 90) do
+    bounding_box([0, cursor + 30], :width => 100, :height => 100) do
       logotipo = @empresa.logotipo.present? ? @empresa.logotipo.to_s : "#{Rails.root}/app/assets/images/facom.png"
 
       if Rails.env.development? || Rails.env.test? # Tese para os ambientes
         if (@empresa.logotipo.present?)
-          image "#{Rails.root}/public#{logotipo}", :position => :center, :width => 80
+          image "#{Rails.root}/public#{logotipo}", :position => :left, :width => 60
         else
-          image "#{Rails.root}/app/assets/images/facom.png", :position => :center, :width => 80
+          image "#{Rails.root}/app/assets/images/facom.png", :position => :left, :width => 60
         end
       else
        if (@empresa.logotipo.present?)
-         image open(logotipo), :position => :center, :width => 80
+         image open(logotipo), :position => :left, :width => 60
        else
-          image "#{Rails.root}/app/assets/images/facom.png", :position => :center, :width => 80
+          image "#{Rails.root}/app/assets/images/facom.png", :position => :left, :width => 60
        end
       end
     end

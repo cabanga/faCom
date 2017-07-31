@@ -1,4 +1,4 @@
 class Funcionario < ApplicationRecord
-  has_many :empresa, dependent: :destroy
+  belongs_to :empresa
 
 end

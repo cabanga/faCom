@@ -10,12 +10,12 @@ class EmpresasController < ApplicationController
       @empresa = Empresa.find_by(id: current_usuario.empresa.id)
       redirect_to @empresa
     end
-
   end
 
   # GET /empresas/1
   # GET /empresas/1.json
   def show
+    @tipos_de_impostos = @empresa.tipos_de_impostos.order('id DESC')
   end
 
   # GET /empresas/new
@@ -34,6 +34,8 @@ class EmpresasController < ApplicationController
 
     respond_to do |format|
       if @empresa.save
+
+        @empresa.cria_usuario
         format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
         format.json { render :show, status: :created, location: @empresa }
       else
@@ -72,15 +74,18 @@ class EmpresasController < ApplicationController
   # DELETE /empresas/1
   # DELETE /empresas/1.json
   def destroy
+    @usuarios = Usuario.where(empresa_id: @empresa.id)
+    @usuarios.destroy_all unless @usuarios.blank?
+
+    @facturas = Factura.where(empresa_id: @empresa.id)
+    @facturas.destroy_all unless @facturas.blank?
+
     @funcionarios = Funcionario.where(empresa_id: @empresa.id)
-
     @funcionarios.destroy_all unless @funcionarios.blank?
-
-    # @funcionarios.each { |f| f.destroy unless f.blank? } unless @funcionarios.blank?
 
     @empresa.destroy
     respond_to do |format|
-      format.html { redirect_to empresas_url, notice: 'Empresa was successfully destroyed.' }
+      format.html { redirect_to empresas_url, notice: 'Empresa e seus associados removido com sucesso.' }
       format.json { head :no_content }
     end
   end

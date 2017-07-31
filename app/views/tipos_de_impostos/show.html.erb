@@ -1,0 +1,11 @@
+<%= breadcrumb_index([link_to('Home', root_url), link_to('Registos', @empresa), "Resgisto da Empresa"]) %>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_empresa_tipo_de_imposto_url %> </li>
+  <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, empresa_tipo_de_imposto_url(@empresa), method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
+</ul>
+<br>
+
+<p><strong>TIPO:</strong> <%= @tipo_de_imposto.tipo %></p>
+<p><strong>MOTIVO:</strong> <%= @tipo_de_imposto.motivo %></p>
+<p><strong>PERCENTAGEM:</strong> <%= @tipo_de_imposto.percentagem %></p>

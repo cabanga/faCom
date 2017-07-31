@@ -14,7 +14,7 @@ class DetalheDaFactura < Prawn::Document
     dados_do_cliente
     move_down 70
     cabecalho_da_factura
-    # quadro_de_itens
+    itens_da_factura
     move_down 90
     linha
     referencia_do_total
@@ -100,6 +100,28 @@ class DetalheDaFactura < Prawn::Document
         end
     end
 
+    def itens_da_factura
+        table([['Artigo', 'Descrição', 'Pr. Unitário', 'Qtd.', 'Desc.', 'IPC' ,'Valor']],
+          position: 0, :column_widths => [40, 130, 85, 25, 85, 85, 83],
+          :cell_style =>  {:borders => [], :align => :right, :size => 7,:font_style => :bold, :padding => [5, 0, 5, 5]}) do
+            column(0).style(:align => :left)
+            column(1).style(:align => :left)
+          end
+
+        @factura.item_facturas.each do |item|
+
+          table([["#{item.codigo}", "#{item.descricao}", "#{item.preco_unitario}", "#{item.quantidade}", "", "", "#{item.preco_total}"]],
+          position: 0, :column_widths => [40, 130, 85, 25, 85, 85, 83],
+          :cell_style =>  {:borders => [], height: 10, :padding => [0, 0, 0, 5], :align => :right, :size => 6}) do
+            column(0).style(align: :left)
+            column(1).style(align: :left)
+          end
+
+        end
+
+    end
+
+
     def referencia_do_total
       bounding_box([350, bounds.bottom + 270], :width => 190, :height => 80) do
       indent(5) do
@@ -129,7 +151,7 @@ class DetalheDaFactura < Prawn::Document
          move_down 5
          text "0,00 AKZ", size: 7, :align => :right
          move_down 9.5
-         text "0,00 AKZ",:styles => [:bold], size: 10, :align => :right
+         text "#{@factura.valor_total} AKZ",:styles => [:bold], size: 10, :align => :right
        end
       end
     end

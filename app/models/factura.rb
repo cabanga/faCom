@@ -1,5 +1,6 @@
 class Factura < ApplicationRecord
   belongs_to :empresa
+  has_many :item_facturas, dependent: :destroy
 
   def pagar_factura
     if (self.is_payd)

@@ -1,7 +1,7 @@
 class Usuario < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  belongs_to :empresa
+  belongs_to :empresa, dependent: :destroy
 
 
   devise :database_authenticatable, :registerable,

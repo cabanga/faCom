@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tipos De Impostos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Motivo</th>
+      <th>Percentagem</th>
+      <th>Valor</th>
+      <th>Empresa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipos_de_impostos.each do |tipo_de_imposto| %>
+      <tr>
+        <td><%= tipo_de_imposto.tipo %></td>
+        <td><%= tipo_de_imposto.motivo %></td>
+        <td><%= tipo_de_imposto.percentagem %></td>
+        <td><%= tipo_de_imposto.valor %></td>
+        <td><%= tipo_de_imposto.empresa %></td>
+        <td><%= link_to 'Show', tipo_de_imposto %></td>
+        <td><%= link_to 'Edit', edit_tipo_de_imposto_path(tipo_de_imposto) %></td>
+        <td><%= link_to 'Destroy', tipo_de_imposto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo De Imposto', new_tipo_de_imposto_path %>

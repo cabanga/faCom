@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  natureza: MyString
+  motivo: MyString
+  percentagem: 1
+  empresa: one
+
+two:
+  nome: MyString
+  natureza: MyString
+  motivo: MyString
+  percentagem: 1
+  empresa: two

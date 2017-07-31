@@ -36,6 +36,11 @@ class RegistosController < ApplicationController
           format.html { redirect_to root_url, notice: 'Registo enviado com sucesso.' }
         end
         format.json { render :show, status: :created, location: @registo }
+
+        RegistoMailer.novo_registo(@registo).deliver
+        RegistoMailer.novo_registo_para_equipa(@registo).deliver
+
+
       else
         format.html { render :new }
         format.json { render json: @registo.errors, status: :unprocessable_entity }
