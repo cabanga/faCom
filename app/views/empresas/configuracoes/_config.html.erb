@@ -1,9 +1,11 @@
 <ul class="nav nav-tabs">
-  <li class="active" role="presentation"><a href="#imposto-associado" aria-controls="IMPOSTOS" role="tab" data-toggle="tab">Tipos de Impostos</a></li>
+  <li class="active" role="presentation"><a href="#imposto-associado" aria-controls="Impostos" role="tab" data-toggle="tab">Tipos de Impostos</a></li>
+  <li role="presentation"><a href="#descontos-associado" aria-controls="descontos" role="tab" data-toggle="tab">Tipos de Descontos</a></li>
 </ul>
 
 <br>
 
 <div class="tab-content"> <!-- Tab panes -->
   <div class="active" role="tabpanel" class="tab-pane" id="imposto-associado"><%= render "empresas/configuracoes/tipos_de_impostos" %></div>
+  <div role="tabpanel" class="tab-pane" id="descontos-associado"><%= render "empresas/configuracoes/tipos_de_descontos" %></div>
 </div>

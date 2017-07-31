@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @tipo_de_desconto.nome %>
+</p>
+
+<p>
+  <strong>Natureza:</strong>
+  <%= @tipo_de_desconto.natureza %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @tipo_de_desconto.motivo %>
+</p>
+
+<p>
+  <strong>Percentagem:</strong>
+  <%= @tipo_de_desconto.percentagem %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @tipo_de_desconto.empresa %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_de_desconto_path(@tipo_de_desconto) %> |
+<%= link_to 'Back', tipos_de_descontos_path %>

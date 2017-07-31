@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731083749) do
+ActiveRecord::Schema.define(version: 20170731090912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,19 @@ ActiveRecord::Schema.define(version: 20170731083749) do
     t.index ["cidade_id"], name: "index_registos_on_cidade_id", using: :btree
   end
 
+  create_table "tipos_de_descontos", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "natureza"
+    t.string   "motivo"
+    t.integer  "percentagem"
+    t.boolean  "is_active",   default: false, null: false
+    t.boolean  "boolean",     default: false, null: false
+    t.integer  "empresa_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["empresa_id"], name: "index_tipos_de_descontos_on_empresa_id", using: :btree
+  end
+
   create_table "tipos_de_impostos", force: :cascade do |t|
     t.string   "tipo"
     t.string   "motivo"
@@ -137,6 +150,7 @@ ActiveRecord::Schema.define(version: 20170731083749) do
   add_foreign_key "funcionarios", "empresas"
   add_foreign_key "item_facturas", "facturas"
   add_foreign_key "registos", "cidades"
+  add_foreign_key "tipos_de_descontos", "empresas"
   add_foreign_key "tipos_de_impostos", "empresas"
   add_foreign_key "usuarios", "empresas"
 end
