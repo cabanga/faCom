@@ -1,3 +1,5 @@
+include ActionView::Helpers::NumberHelper
+
 module ApplicationHelper
 
   def testo_da_factura_index(is)
@@ -72,7 +74,7 @@ module ApplicationHelper
       def to_kwanza
         valor = self
         valor = 0 if valor.blank?
-        number_to_currency(valor, :locale => :ao)
+        number_to_currency(valor, unit: "AKz", separator: ",", delimiter:".", format: "%n %u")        
       end
 
       def to_month
