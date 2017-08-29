@@ -49,7 +49,7 @@ gem 'omniauth-facebook'
 gem "nested_form"
 
 gem "nested_form"
-
+gem 'vuejs-rails'
 gem 'prawn'
 gem 'prawn-table'
 
