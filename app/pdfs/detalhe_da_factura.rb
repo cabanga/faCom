@@ -151,7 +151,7 @@ class DetalheDaFactura < Prawn::Document
          move_down 5
          text "0,00 AKZ", size: 7, :align => :right
          move_down 9.5
-         text "#{@factura.valor_total} AKZ",:styles => [:bold], size: 10, :align => :right
+         text "#{@factura.valor_total.to_kwanza}",:styles => [:bold], size: 10, :align => :right
        end
       end
     end

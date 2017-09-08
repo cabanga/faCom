@@ -6,20 +6,24 @@ class Registo < ApplicationRecord
   def criar_empresa
     empresa = Empresa.create(nome: "#{self.nome_empresa}", telemovel: "#{self.telemovel}", telefone: "", email: "#{self.email}", estado: 1, is_active: true, cidade_id: self.cidade)
 
-    usuario = Usuario.new
+    unless (empresa.id.nil?)
+      usuario = Usuario.new
 
-    usuario.senha_provisoria = rand(2**256).to_s(36).ljust(8, 'a')[0..10]
-    usuario.nome = "#{self.nome_user}"
-    usuario.role = 1
-    usuario.telemovel = "#{self.telemovel}"
-    usuario.email = "#{self.email}"
-    usuario.password = usuario.senha_provisoria
-    usuario.password_confirmation = usuario.senha_provisoria
-    usuario.empresa_id = empresa.id
+      usuario.senha_provisoria = rand(2**256).to_s(36).ljust(8, 'a')[0..10]
+      usuario.nome = "#{self.nome_user}"
+      usuario.role = 1
+      usuario.telemovel = "#{self.telemovel}"
+      usuario.email = "#{self.email}"
+      usuario.password = usuario.senha_provisoria
+      usuario.password_confirmation = usuario.senha_provisoria
+      usuario.empresa_id = empresa.id
 
-    usuario.save
+      usuario.save
+    end
 
-    RegistoMailer.aprovar_registo(usuario).deliver
+    unless Rails.env.development? || Rails.env.test?
+      RegistoMailer.aprovar_registo(usuario).deliver
+    end
 
   end
 

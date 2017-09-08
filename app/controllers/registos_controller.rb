@@ -37,10 +37,10 @@ class RegistosController < ApplicationController
         end
         format.json { render :show, status: :created, location: @registo }
 
-        RegistoMailer.novo_registo(@registo).deliver
-        RegistoMailer.novo_registo_para_equipa(@registo).deliver
-
-
+        unless Rails.env.development? || Rails.env.test?
+          RegistoMailer.novo_registo(@registo).deliver
+          RegistoMailer.novo_registo_para_equipa(@registo).deliver
+        end
       else
         format.html { render :new }
         format.json { render json: @registo.errors, status: :unprocessable_entity }
@@ -73,7 +73,7 @@ class RegistosController < ApplicationController
   end
 
   def aprovar_registo
-    if Usuario.find_by(email: @registo.email) || Usuario.find_by(telemovel: @registo.telemovel)
+    if  Usuario.find_by(email: @registo.email) || Usuario.find_by(telemovel: @registo.telemovel)
       flash[:error] = 'email ou telemóvel indisponível'
     else
       @registo.criar_empresa

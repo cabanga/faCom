@@ -1,3 +1,14 @@
+<%= content_tag :div, id: "factura-form", data: { factura: factura.to_json(except: [:created_at, :updated_at]), item_facturas_attributes: factura.item_facturas.to_json(except: [:factura_id,:created_at, :updated_at]) }  do %>
+  <%=  %>
+<% end%>
+
+
+
+
+
+
+
+
 
 <%= simple_form_for(@factura, html:{ multipart: true }) do |f| %>
   <%= f.error_notification %>
