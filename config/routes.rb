@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'portal/index'
+
   resources :facturas
   resources :funcionarios
   resources :registos
@@ -22,14 +24,13 @@ Rails.application.routes.draw do
 
   end
 
-
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
 
   get 'home/index'
-  root "home#index"
+  root "portal#index"
 
   patch 'registos/:id/aprovar_registo' => 'registos#aprovar_registo', as: 'aprovar_registo'
   patch 'empresas/:id/activar_e_desactivar' => 'empresas#activar_e_desactivar', as: 'activar_e_desactivar'
