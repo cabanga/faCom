@@ -48,8 +48,6 @@ gem 'newrelic_rpm'
 gem 'omniauth-facebook'
 gem "nested_form"
 
-gem "nested_form"
-
 gem 'prawn'
 gem 'prawn-table'
 
