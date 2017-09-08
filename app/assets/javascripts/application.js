@@ -16,7 +16,6 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require animate.js
-//= require vue
 
 
 $(document).ready(function(){
