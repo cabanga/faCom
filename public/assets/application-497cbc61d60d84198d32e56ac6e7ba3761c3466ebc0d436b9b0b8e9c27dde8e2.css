@@ -26,50 +26,73 @@
 }*/
 
 
-.box-notification{
-  /*color: #ffffff!important;*/
-  top: 7%;
-  padding: 20px;
-  right: 0px;
-  position: absolute;
-  min-width: 200px;
-  min-height: 50px;
-  max-width: 200px;
+.box-notification {
+    /*color: #ffffff!important;*/
+    top: 7%;
+    padding: 20px;
+    right: 0px;
+    position: absolute;
+    min-width: 200px;
+    min-height: 50px;
+    max-width: 200px;
 }
 
-.box-notification-sombra{
-  text-align: center;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+.box-notification-sombra {
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(156, 39, 176, 0.7);
 }
 
-.animateOpen{
-  -webkit-animation:fadeInRight 1s;
-  -webkit-animation-fill-mode: forwards;
+.animateOpen {
+    -webkit-animation: fadeInRight 1s;
+    -webkit-animation-fill-mode: forwards;
 }
 
-.animateClose{
-  -webkit-animation:fadeOutRight 1s;
-  -webkit-animation-fill-mode: forwards;
+.animateClose {
+    -webkit-animation: fadeOutRight 1s;
+    -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes fadeOutRight {
-  from { opacity: 1; }
-  to { opacity: 0; transform: translate3d(100%, 0, 0); }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translate3d(100%, 0, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translate3d(0, -100%, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translate3d(0, 100%, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -6923,7 +6946,7 @@ button.close {
 }
 
 .panel-heading{
-  background-color: #d9edf7; 
+  background-color: #d9edf7;
 }
 
 .profile-img-card {
@@ -6961,11 +6984,11 @@ button.close {
 }
 
 .color-activar{
-  color: #3183d8;
+  color: #3183d8!important;
 }
 
 .color-desactivar{
-  color: #d8ac31
+  color: #d8ac31!important;
 }
 
 .link_sem_decoracao {
