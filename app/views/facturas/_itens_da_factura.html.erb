@@ -16,8 +16,8 @@
       <td><%= item_factura.codigo %></td>
       <td class="text-center"><%= item_factura.quantidade %></td>
       <td><%= item_factura.descricao %></td>
-      <td class="text-right"><%= item_factura.preco_unitario %></td>
-      <td class="text-right"><%= item_factura.preco_total %></td>
+      <td class="text-right"><%= item_factura.preco_unitario.to_kwanza %></td>
+      <td class="text-right"><%= item_factura.preco_total.to_kwanza %></td>
 
       <td class="text-right">
         <%= link_to factura_item_factura_path(@factura, item_factura), class:"fa fa-times-circle fa-lg", style:"color: #ce1b1b;",method: :delete do %>

@@ -2,6 +2,8 @@ class Factura < ApplicationRecord
   belongs_to :empresa
   has_many :item_facturas, dependent: :destroy
 
+  accepts_nested_attributes_for :item_facturas, allow_destroy: true
+
   def pagar_factura
     if (self.is_payd)
       self.update_columns(is_payd: false)
