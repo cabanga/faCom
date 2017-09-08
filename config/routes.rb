@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   resources :empresas do
     resources :tipos_de_impostos
     patch 'tipos_de_impostos/:id/activar_e_desactivar' => 'tipos_de_impostos#activar_e_desactivar', as: 'activar_e_desactivar'
-
     resources :tipos_de_descontos
 
     resources :tipos_de_descontos do
