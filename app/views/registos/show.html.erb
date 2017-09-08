@@ -3,6 +3,9 @@
 
 <ul class="nav nav-tabs">
   <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_registo_path(@registo) %> </li>
+  <% if @registo.em_espera? %>
+    <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-check " aria-hidden="true"></i> Editar</span>'.html_safe, aprovar_registo_url(@registo), method: :patch, class:"btn btn-success btn-xs", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." }  %> </li>
+  <% end %>
   <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @registo, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
 </ul>
 <br>
