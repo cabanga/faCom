@@ -39,7 +39,7 @@ class RegistosController < ApplicationController
 
         unless Rails.env.development? || Rails.env.test?
           RegistoMailer.novo_registo(@registo).deliver
-          RegistoMailer.novo_registo_para_equipa(@registo).deliver
+          # RegistoMailer.novo_registo_para_equipa(@registo).deliver
         end
       else
         format.html { render :new }
