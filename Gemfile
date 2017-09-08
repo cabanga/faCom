@@ -48,8 +48,6 @@ gem 'newrelic_rpm'
 gem 'omniauth-facebook'
 gem "nested_form"
 
-gem "nested_form"
-
 gem 'prawn'
 gem 'prawn-table'
 
@@ -60,7 +58,7 @@ gem 'rb-fsevent', '~> 0.9.7'
 # gem 'capistrano-rails', group: :development
 
 group :production do
-  gem 'rails_12factor', group: :production
+  # gem 'rails_12factor'
 end
 
 group :development, :test do
