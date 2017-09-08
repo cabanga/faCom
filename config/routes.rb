@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
 
   get 'home/index'
-  root "portal#index"
+  root "home#index"
 
   patch 'registos/:id/aprovar_registo' => 'registos#aprovar_registo', as: 'aprovar_registo'
   patch 'empresas/:id/activar_e_desactivar' => 'empresas#activar_e_desactivar', as: 'activar_e_desactivar'
