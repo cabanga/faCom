@@ -9,18 +9,25 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Tipo de Serviços'.html_safe, "#", class: "remove-hover" %> </li>
         <li><%= link_to 'Custo'.html_safe, "#", class: "remove-hover" %> </li>
         <li><%= link_to 'Contacto'.html_safe, "#", class: "remove-hover" %> </li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'ENTRAR'.html_safe, new_usuario_session_url, class: "remove-hover" %> </li>
+        <li>
+          <%= link_to new_usuario_session_url, class: "remove-hover botao-login" do %>
+            <button type="button" class="btn btn-outline-secondary btn-login">ENTRAR</button>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+
+<style media="screen">
+
+</style>
+
 
 <div class="flex-row">
   <div class="flex-col-xs">
@@ -29,6 +36,13 @@
 </div>
 
 <div class="container" style="margin-top: 8%;">
+  <%= link_to new_registo_path do %>
+    <button type="button" class="btn btn-registar">REGISTAR-SE</button>
+  <% end%>
+  <br>
+  <br>
+  <br>
+  <br>
   <%= render "servicos" %>
 </div>
 
@@ -36,6 +50,7 @@
 <br>
 <br>
 <br>
+
 
 <div class="" style="background-color: #64b7d0;">
   <%= render "outros_servicos" %>

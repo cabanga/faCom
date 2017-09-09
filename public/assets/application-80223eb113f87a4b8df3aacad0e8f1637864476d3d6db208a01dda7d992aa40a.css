@@ -26,50 +26,73 @@
 }*/
 
 
-.box-notification{
-  /*color: #ffffff!important;*/
-  top: 7%;
-  padding: 20px;
-  right: 0px;
-  position: absolute;
-  min-width: 200px;
-  min-height: 50px;
-  max-width: 200px;
+.box-notification {
+    /*color: #ffffff!important;*/
+    top: 7%;
+    padding: 20px;
+    right: 0px;
+    position: absolute;
+    min-width: 200px;
+    min-height: 50px;
+    max-width: 200px;
 }
 
-.box-notification-sombra{
-  text-align: center;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+.box-notification-sombra {
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(156, 39, 176, 0.7);
 }
 
-.animateOpen{
-  -webkit-animation:fadeInRight 1s;
-  -webkit-animation-fill-mode: forwards;
+.animateOpen {
+    -webkit-animation: fadeInRight 1s;
+    -webkit-animation-fill-mode: forwards;
 }
 
-.animateClose{
-  -webkit-animation:fadeOutRight 1s;
-  -webkit-animation-fill-mode: forwards;
+.animateClose {
+    -webkit-animation: fadeOutRight 1s;
+    -webkit-animation-fill-mode: forwards;
 }
 
 @keyframes fadeOutRight {
-  from { opacity: 1; }
-  to { opacity: 0; transform: translate3d(100%, 0, 0); }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
 @keyframes fadeInRight {
-  from { opacity: 0; transform: translate3d(100%, 0, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translate3d(0, -100%, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translate3d(0, 100%, 0); }
-  to { opacity: 1; transform: none; }
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
@@ -6888,6 +6911,50 @@ button.close {
     -webkit-box-ordinal-group: 2;
     order: 1;
   }
+}
+/* line 6, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.navbar-default-facom {
+  background-color: transparent;
+  border-color: #e7e7e7;
+}
+
+/* line 12, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.botao-login {
+  padding-bottom: 0 !important;
+  padding-top: 8px !important;
+}
+
+/* line 17, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.btn-login {
+  border-radius: 0px;
+  background-color: #64b7d0;
+  color: #fff;
+  box-shadow: #999999 1px 2px 10px;
+}
+
+/* line 24, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.btn-login:hover, .btn-login:focus {
+  border-radius: 0px;
+  background-color: #64b7d0;
+  color: #fff;
+  box-shadow: rgba(153, 153, 153, 0.9) 0px 1px 1px;
+}
+
+/* line 31, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.btn-registar {
+  padding: 15px;
+  color: #4a5262;
+  background-color: transparent;
+  border: 0.0003px solid #68d9a1;
+  font-size: 30px;
+  border-radius: 0px;
+  box-shadow: rgba(104, 217, 161, 0.65) 1px 2px 10px;
+}
+
+/* line 41, /Users/jmcabanga/projectos/faCom/app/assets/stylesheets/portal.scss */
+.btn-registar:hover, .btn-registar:focus {
+  color: #4a5262;
+  box-shadow: rgba(104, 217, 161, 0.65) 0px 1px 1px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
