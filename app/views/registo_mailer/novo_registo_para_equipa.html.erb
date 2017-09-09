@@ -2,17 +2,15 @@
 <h3 style="text-align:justify;font-size: 16px;color: #000;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;">
   <p>Olá equipa da Facom</p>
 </h3>
-<br>
 <p>Este e-mail serve para lhe informar que foi enviado um novo registo.</p>
 <br>
 <p>DADOS:</p>
-<br>
 <p><strong>NOME DO ADMIN:</strong> <%= @registo.nome_user %></p>
 <p><strong>NOME DA EMPRESA:</strong> <%= @registo.nome_empresa %></p>
 <p><strong>TELEMÓVEL:</strong> <%= @registo.telemovel %></p>
 <p><strong>E-MAIL:</strong> <%= @registo.email %></p>
 
-<p style="text-align:justify;font-size: 16px;color: #000;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;">Pode aceder o ver detalhes deste pedido a partir deste <%= link_to "link", registo_url(@registo.id) %></p>
+<p style="text-align:justify;font-size: 16px;color: #000;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;">Para mais informações acesse o portal <%= link_to "link", registo_url(@registo.id) %></p>
 <br>
 <br>
 <p style="text-align:justify;font-size: 16px;color: #000;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;">M. Cumprimentos</p>

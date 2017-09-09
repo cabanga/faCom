@@ -37,10 +37,10 @@ class RegistosController < ApplicationController
         end
         format.json { render :show, status: :created, location: @registo }
 
-        unless Rails.env.development? || Rails.env.test?
+        # unless Rails.env.development? || Rails.env.test?
           RegistoMailer.novo_registo(@registo).deliver
-          # RegistoMailer.novo_registo_para_equipa(@registo).deliver
-        end
+          RegistoMailer.novo_registo_para_equipa(@registo).deliver
+        # end
       else
         format.html { render :new }
         format.json { render json: @registo.errors, status: :unprocessable_entity }

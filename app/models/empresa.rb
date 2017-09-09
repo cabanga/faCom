@@ -1,7 +1,9 @@
 class Empresa < ApplicationRecord
   belongs_to :cidade
   has_many :funcionarios
-  has_many :Usuarios
+  has_many :usuarios
+  has_many :facturas
+
   has_many :tipos_de_impostos, dependent: :destroy
 
   mount_uploader :logotipo, LogotipoEmpresaUploader
