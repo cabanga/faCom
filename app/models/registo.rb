@@ -19,10 +19,10 @@ class Registo < ApplicationRecord
       usuario.empresa_id = empresa.id
 
       usuario.save
-    end
 
-    unless Rails.env.development? || Rails.env.test?
-      RegistoMailer.aprovar_registo(usuario).deliver
+      # unless Rails.env.development? || Rails.env.test?
+        RegistoMailer.aprovar_registo(usuario).deliver
+      # end
     end
 
   end
