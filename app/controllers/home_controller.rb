@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   alias_method :current_user, :current_usuario
 
   def index
-    redirect_to new_usuario_session_url unless usuario_signed_in?
+    redirect_to portal_index_url unless usuario_signed_in?
 
     if usuario_signed_in?
       @quantidade_de_facturas_de_hoje =  Factura.where(empresa_id: current_usuario.empresa_id)

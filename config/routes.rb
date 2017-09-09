@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'portal/index'
+
   resources :facturas
   resources :funcionarios
   resources :registos
@@ -21,7 +23,6 @@ Rails.application.routes.draw do
     end
 
   end
-
 
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
