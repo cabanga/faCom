@@ -12,6 +12,7 @@
       <th>TELEMÓVEL</th>
       <th>TELEFONE</th>
       <th>E-MAIL</th>
+      <th>QUANTIDADE DE FACTURAS</th>
       <th>ESTADO</th>
       <th colspan="3"></th>
     </tr>
@@ -25,6 +26,7 @@
         <td><%= empresa.telefone %></td>
         <td><%= empresa.email %></td>
         <td> <span><%= estado_da_empresa(empresa.is_active) %></span> </td>
+        <td> <%= empresa.facturas_da_empresa.count %> </td>
         <td class="text-right"><%= link_to 'Apagar', empresa, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
       </tr>
     <% end %>

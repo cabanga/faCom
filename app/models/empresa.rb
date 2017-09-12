@@ -16,6 +16,10 @@ class Empresa < ApplicationRecord
     end
   end
 
+  def facturas_da_empresa
+    Factura.where(empresa_id: self.id)
+  end
+
   def cria_usuario
 
     usuario = Usuario.new
