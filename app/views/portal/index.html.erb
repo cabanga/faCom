@@ -5,14 +5,14 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <i class="fa fa-bars" style="color: #337ab7" aria-hidden="true"></i>
       </button>
-      <a class="navbar-brand" href="<%=root_url %>">FACOM</a>
+      <a class="navbar-brand" href="<%=root_url %>">faCom</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Tipo de Serviços'.html_safe, "#", class: "remove-hover" %> </li>
-        <li><%= link_to 'Custo'.html_safe, "#", class: "remove-hover" %> </li>
-        <li><%= link_to 'Contacto'.html_safe, "#", class: "remove-hover" %> </li>
+        <li><%= link_to 'MISSÃO'.html_safe, "#", class: "remove-hover" %> </li>
+        <li><%= link_to 'SERVIÇOS'.html_safe, "#", class: "remove-hover" %> </li>
+        <li><%= link_to 'CONTACTO'.html_safe, "#", class: "remove-hover" %> </li>
         <li>
           <%= link_to new_usuario_session_url, class: "remove-hover botao-login" do %>
             <button type="button" class="btn btn-outline-secondary btn-login">ENTRAR</button>
@@ -29,7 +29,9 @@
   </div>
 </div>
 
-<div class="container text-center" style="margin-top: 8%;">
+<div class="container text-center" style="margin-top: 2%;">
+  <h3>faCom é um sistema de gestão de faturas, que proporciona a todo e qualquer instituição empresárial a organizar – se e a funcionar como uma só, de forma plena e transparente.</h3>
+  <br>
   <%= link_to new_registo_path do %>
     <button type="button" class="btn btn-registar">REGISTAR-SE</button>
   <% end%>
@@ -41,12 +43,20 @@
   <%= render "servicos" %>
 </div>
 
-<div class="" style="background-color: #64b7d0; margin-top: 8%;">
+<div class="" style="background-color: #64b7d0; margin-top: 3%;">
   <%= render "outros_servicos" %>
 </div>
 
-<div class="container text-center" style="margin-top: 8%;">
+<div class="container text-center" style="margin-top: 3%;">
+  <h3>Permite criar e registar faturas de forma rápida e eficaz, adicionar funcionários e configurar os seus dados</h3>
+  <h3>Notificar os seus clientes (isso no pagamento das suas faturas). Mantendo um processo simples, para o bom funcionamento do empresa, enfatizando o controlo financeiro</h3>
+  <br>
+  <br>
   <%= link_to new_registo_path do %>
     <button type="button" class="btn btn-registar">REGISTAR-SE</button>
   <% end%>
+</div>
+
+<div class="" style="background-color: #64b7d0; margin-top: 3%; padding: 25px;">
+  <%= render "rodape_do_portal" %>
 </div>
