@@ -1,5 +1,5 @@
 class FuncionariosController < ApplicationController
-  before_action :set_funcionario, only: [:show, :edit, :update, :destroy]
+  before_action :set_funcionario, only: [:show, :edit, :update, :destroy, :tornar_usuario]
 
   # GET /funcionarios
   # GET /funcionarios.json
@@ -9,7 +9,7 @@ class FuncionariosController < ApplicationController
     if (current_usuario.super_admin?)
       @funcionarios = Funcionario.all
     else
-      @funcionarios = Funcionario.all.where(empresa_id: current_usuario.empresa.id)
+      @funcionarios = Funcionario.where(empresa_id: current_usuario.empresa.id)
     end
 
   end
@@ -62,6 +62,12 @@ class FuncionariosController < ApplicationController
     end
   end
 
+  def tornar_usuario
+    #@funcionario.tornar_usuario
+
+    redirect_to funcionarios_url
+  end
+
   # DELETE /funcionarios/1
   # DELETE /funcionarios/1.json
   def destroy
@@ -80,6 +86,6 @@ class FuncionariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
-      params.require(:funcionario).permit(:nome, :telemovel, :tipo_de_ident, :numero_ident, :empresa_id)
+      params.require(:funcionario).permit(:nome, :telemovel, :tipo_de_ident, :numero_ident, :empresa_id, :usuario_id)
     end
 end

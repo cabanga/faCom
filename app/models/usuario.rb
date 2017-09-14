@@ -2,6 +2,7 @@ class Usuario < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   belongs_to :empresa, dependent: :destroy
+  has_many :funcionarios, dependent: :destroy
 
 
   devise :database_authenticatable, :registerable,
@@ -61,10 +62,6 @@ class Usuario < ApplicationRecord
               presence: {message: "não pode estar em branco!"},
               :numericality => {:only_integer => true, message: "numero de telefone inválido"},
               length: {in: 9..9, message: "número de telefone inválido. Ex: 923456699"}
-
-
-
-
 
 
 

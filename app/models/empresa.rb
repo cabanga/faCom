@@ -34,9 +34,9 @@ class Empresa < ApplicationRecord
     usuario.empresa_id = self.id
 
     usuario.save
-    unless Rails.env.development? || Rails.env.test?
+    # unless Rails.env.development? || Rails.env.test?
       RegistoMailer.aprovar_registo(usuario).deliver
-    end
+    # end
 
   end
 

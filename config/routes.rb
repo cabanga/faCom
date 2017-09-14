@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :item_facturas
   end
 
+  patch 'funcionarios/:id/tornar_usuario' => 'funcionarios#tornar_usuario', as: 'tornar_usuario'
+
   resources :empresas do
     resources :tipos_de_impostos
     patch 'tipos_de_impostos/:id/activar_e_desactivar' => 'tipos_de_impostos#activar_e_desactivar', as: 'activar_e_desactivar'

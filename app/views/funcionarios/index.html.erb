@@ -31,6 +31,11 @@
         <% if current_usuario.super_admin? %>
           <td><%= funcionario.empresa.nome.upcase %></td>
         <% end %>
+
+        <% if true#funcionario.usuario_id.present? %>
+          <td class="text-right"><%= link_to "Tornar usuário", tornar_usuario_url(funcionario), method: :patch, class:"btn btn-success btn-xs", data: {confirm: 'Tens a certesa?' , disable_with: "<i class='fa fa-spinner fa-spin'></i> A Processar..." } %></td>
+        <% end %>
+
         <td class="text-right"><%= link_to 'Apagar', funcionario, method: :delete, data: { confirm: 'Tens a certesa?' }, class: "apagar" %></td>
       </tr>
     <% end %>
