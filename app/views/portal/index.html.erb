@@ -51,11 +51,25 @@
   <h3>Permite criar e registar faturas de forma rápida e eficaz, adicionar funcionários e configurar os seus dados</h3>
   <h3>Notificar os seus clientes (isso no pagamento das suas faturas). Mantendo um processo simples, para o bom funcionamento do empresa, enfatizando o controlo financeiro</h3>
   <br>
-  <br>
-  <%= link_to new_registo_path do %>
-    <button type="button" class="btn btn-registar">REGISTAR-SE</button>
-  <% end%>
 </div>
+
+<br>
+
+<div class="flex-container-fluid ">
+  <div class="flex-row flex-center-xs">
+    <div class="flex-col-xs">
+    </div>
+
+    <div class="flex-col-xs-3">
+      <%= image_tag("LOGO-ONE.svg", alt: "logotipo da facom", class:"img-responsive") %>
+    </div>
+
+    <div class="flex-col-xs">
+    </div>
+  </div>
+</div>
+
+<br>
 
 <div class="" style="background-color: #64b7d0; margin-top: 3%; padding: 25px;">
   <%= render "rodape_do_portal" %>

@@ -30,6 +30,25 @@
   padding-top: 8px!important;
 }
 
+.btn-registar-rodape {
+    padding: 15px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 0.0003px solid #68d9a1;
+    font-size: 19px;
+    border-radius: 0px;
+    box-shadow: rgba(104, 217, 161, 0.65) 1px 2px 10px;
+}
+
+.btn-registar-rodape:hover, .btn-registar-rodape:focus{
+  color: #ffffff;
+  box-shadow: rgba(104, 217, 161, 0.65) 0px 1px 1px;
+}
+
+.itens-contactos{
+  margin-left: 25px;
+}
+
 .btn-login{
   border-radius: 0px;
   background-color: #64b7d0;

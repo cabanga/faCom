@@ -22,6 +22,10 @@
     src: url(/assets/fonts/ProximaNova-Light.otf) format("truetype");
 }
 
+.color_bg{
+  background-color: #64b7d0!important;
+}
+
 .no-margin{
   margin: 0px;
 }
