@@ -22,6 +22,9 @@
     src: url(/assets/fonts/ProximaNova-Light.otf) format("truetype");
 }
 
+.color-icon{
+  color: #fff!important;
+}
 .color_bg{
   background-color: #64b7d0!important;
 }
@@ -45,10 +48,11 @@ a:hover, a:focus {
 
 .panel-new{
   -webkit-box-shadow: 0 1px 1px #999999!important;
+  border-radius: 0px!important;
 }
 
 .panel-heading{
-  background-color: #d9edf7;
+  background-color: #64b7d0;
 }
 
 .profile-img-card {
@@ -94,11 +98,11 @@ a:hover, a:focus {
 }
 
 .link_sem_decoracao {
-	color: #777777!important;
+	color: #64b7d0!important;
 }
 
 .link_sem_decoracao:hover {
-	color: #777777!important;
+	color: #64b7d0!important;
   text-decoration: none;
   transform: scale(1.1);
 }

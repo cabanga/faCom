@@ -1,14 +1,14 @@
 <div class="flex-row flex-start-xs">
   <div class="hidden-xs col-md-4">
     <div class="panel panel-left panel-new">
-      <div class="panel-heading panel-heading-new">
+      <div class="panel-heading panel-heading-new no-border-radius">
         <div class="row">
           <div class="col-xs-3">
-            <span class="fa fa-file-pdf-o fa-5x"></span>
+            <span class="fa fa-file-pdf-o fa-5x color-icon"></span>
           </div>
           <div class="col-xs-9 text-right">
-            <h3 class=""><%= @quantidade_de_facturas_de_hoje.count %></h3>
-            <p class="">Facturas de <%= Time.now.strftime('%d-%m-%Y') %></p>
+            <h3 class="color-icon"><%= @quantidade_de_facturas_de_hoje.count %></h3>
+            <p class="color-icon">Facturas de <%= Time.now.strftime('%d-%m-%Y') %></p>
 
             <br>
           </div>
@@ -26,14 +26,14 @@
 
   <div class="hidden-xs col-md-4">
     <div class="panel panel-center panel-new">
-      <div class="panel-heading panel-heading-new">
+      <div class="panel-heading panel-heading-new no-border-radius">
         <div class="row">
           <div class="col-xs-3">
-            <span class="fa fa-users fa-5x"></span>
+            <span class="fa fa-users fa-5x color-icon"></span>
           </div>
           <div class="col-xs-9 text-right">
-            <h3 class=""><%= @quantidade_de_funcionarios.count %></h3>
-            <p class="">Funcionários</p>
+            <h3 class="color-icon"><%= @quantidade_de_funcionarios.count %></h3>
+            <p class="color-icon">Funcionários</p>
 
             <br>
           </div>
@@ -51,14 +51,14 @@
 
   <div class="hidden-xs col-md-4">
     <div class="panel panel-right panel-new">
-      <div class="panel-heading panel-heading-new">
+      <div class="panel-heading panel-heading-new no-border-radius">
         <div class="row">
           <div class="col-xs-3">
-            <span class="fa fa-bar-chart fa-5x"></span>
+            <span class="fa fa-bar-chart fa-5x color-icon"></span>
           </div>
           <div class="col-xs-9 text-right">
-            <h3 class="">30%</h3>
-            <p class="">Meta de Jun/2017</p>
+            <h3 class="color-icon">...</h3>
+            <p class="color-icon">...</p>
 
             <br>
           </div>
@@ -74,3 +74,11 @@
     </div>
   </div>
 </div>
+
+
+
+<style media="screen">
+  .no-border-radius{
+    border-radius: 0px!important;
+  }
+</style>
