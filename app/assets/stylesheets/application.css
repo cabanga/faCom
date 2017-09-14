@@ -30,6 +30,11 @@ a {
   color: #64b7d0;
 }
 
+a:hover, a:focus {
+    color: #64b7d0;
+    text-decoration: none;
+}
+
 * {
     font-family: 'ProximaNova-Light';
 }
