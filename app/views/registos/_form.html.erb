@@ -1,29 +1,26 @@
 <%= simple_form_for(@registo, html:{ multipart: true }) do |f| %>
-  <%= f.error_notification %>
 
   <div class="flex-container-fluid " style="margin-top: 10%;">
     <div class="flex-row flex-center-xs">
       <div class="flex-col-xs-12 flex-col-sm-4">
-        <% if false %>
-          <%=  %>
-        <%else%>
-          <img class="profile-img-card" src="/assets/binary.jpg" />
-        <%end%>
-
-        <h2>faCom</h2>
-
-          <%= f.input :nome_user, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'Nome do usuário', label: false  %>
-          <br>
-          <%= f.input :telemovel, :input_html => {class:'form-control '}, autocomplete: 'off',placeholder: "Telemóvel", label: false  %>
-          <br>
-          <%= f.input :email, :input_html => {class:'form-control '}, autocomplete: 'off', placeholder: "E-mail", label: false  %>
-          <br>
-          <%= f.input :nome_empresa, :input_html => {class:'form-control '}, autocomplete: 'off', placeholder: "Nome da Empresa", label: false  %>
-          <br>
-          <%= f.association :cidade, :input_html => {class:'form-control '}, prompt: 'Adiciona a Cidade', label: false, collection: Cidade.all, label_method: :nome, value_method: :id   %>
-
+        <%= link_to root_url do %>
+          <% if false %>
+            <%=  %>
+          <%else%>
+            <img class="profile-img-card" src="/assets/facom.png" />
+          <%end%>
+        <% end%>
+        <br>
+        <%= f.input :nome_user, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'Nome do usuário', label: false  %>
+        <br>
+        <%= f.input :telemovel, :input_html => {class:'form-control '}, autocomplete: 'off',placeholder: "Telemóvel", label: false  %>
+        <br>
+        <%= f.input :email, :input_html => {class:'form-control '}, autocomplete: 'off', placeholder: "E-mail", label: false  %>
+        <br>
+        <%= f.input :nome_empresa, :input_html => {class:'form-control '}, autocomplete: 'off', placeholder: "Nome da Empresa", label: false  %>
+        <br>
+        <%= f.association :cidade, :input_html => {class:'form-control '}, prompt: 'Adiciona a Cidade', label: false, collection: Cidade.all, label_method: :nome, value_method: :id   %>
       </div>
-
     </div>
   </div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170731090912) do
+ActiveRecord::Schema.define(version: 20170914131223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,9 @@ ActiveRecord::Schema.define(version: 20170731090912) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "empresa_id"
+    t.integer  "usuario_id"
     t.index ["empresa_id"], name: "index_funcionarios_on_empresa_id", using: :btree
+    t.index ["usuario_id"], name: "index_funcionarios_on_usuario_id", using: :btree
   end
 
   create_table "item_facturas", force: :cascade do |t|
@@ -148,6 +150,7 @@ ActiveRecord::Schema.define(version: 20170731090912) do
   add_foreign_key "empresas", "cidades"
   add_foreign_key "facturas", "empresas"
   add_foreign_key "funcionarios", "empresas"
+  add_foreign_key "funcionarios", "usuarios"
   add_foreign_key "item_facturas", "facturas"
   add_foreign_key "registos", "cidades"
   add_foreign_key "tipos_de_descontos", "empresas"
