@@ -23,37 +23,32 @@
   </div>
 </nav>
 
-
-<style media="screen">
-
-</style>
-
-
 <div class="flex-row">
   <div class="flex-col-xs">
     <%= image_tag("icone-principal.png", alt: "logotipo da facom", class:"img-responsive") %>
   </div>
 </div>
 
-<div class="container" style="margin-top: 8%;">
+<div class="container text-center" style="margin-top: 8%;">
   <%= link_to new_registo_path do %>
     <button type="button" class="btn btn-registar">REGISTAR-SE</button>
   <% end%>
-  <br>
-  <br>
-  <br>
+</div>
+
+<div class="container" style="margin-top: 8%;" >
+  <hr style="margin: 0px;">
   <br>
   <%= render "servicos" %>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-
-
-<div class="" style="background-color: #64b7d0;">
+<div class="" style="background-color: #64b7d0; margin-top: 8%;">
   <%= render "outros_servicos" %>
+</div>
+
+<div class="container text-center" style="margin-top: 8%;">
+  <%= link_to new_registo_path do %>
+    <button type="button" class="btn btn-registar">REGISTAR-SE</button>
+  <% end%>
 </div>
 
 
@@ -62,7 +57,12 @@
 
 
 
-
+<style media="screen">
+  .padding-nos-cards{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+</style>
 
 
 
