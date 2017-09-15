@@ -110,7 +110,7 @@ class DetalheDaFactura < Prawn::Document
 
         @factura.item_facturas.each do |item|
 
-          table([["#{item.codigo}", "#{item.descricao}", "#{item.preco_unitario}", "#{item.quantidade}", "#{item.descricao}", "", "#{item.preco_total}"]],
+          table([["#{item.codigo}", "#{item.descricao}", "#{item.preco_unitario.to_kwanza}", "#{item.quantidade}", "#{item.descricao}", "", "#{item.preco_total.to_kwanza}"]],
           position: 0, :column_widths => [40, 100, 85, 25, 150, 50, 83],
           :cell_style =>  {:borders => [], height: 10, :padding => [0, 0, 0, 5], :align => :right, :size => 6}) do
             column(0).style(align: :left)
