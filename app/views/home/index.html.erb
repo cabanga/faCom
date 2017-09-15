@@ -1,3 +1,17 @@
-<%= render "panel_informativo"%>
+<% if (current_usuario.super_admin?) %>
+  <%= render "home/info_panel/panel_info_super_admin"%>
+<% elsif (current_usuario.admin?)  %>
+  <%= render "home/info_panel/panel_info_admin"%>
+<% elsif (current_usuario.funcionario_user?)  %>
+  <%= render "home/info_panel/panel_info_funcionario"%>
+<% end %>
+
 <hr class="hidden-xs">
-<%= render "menu"%>
+
+<% if (current_usuario.super_admin?) %>
+  <%= render "home/menus/menu_super_admin"%>
+<% elsif (current_usuario.admin?)  %>
+  <%= render "home/menus/menu_admin"%>
+<% elsif (current_usuario.funcionario_user?)  %>
+  <%= render "home/menus/menu_funcionario"%>
+<% end %>

@@ -4,12 +4,16 @@ class FacturasController < ApplicationController
   # GET /facturas
   # GET /facturas.json
   def index
+
     if (current_usuario.super_admin?)
       @facturas = Factura.all
-    else
+    elsif (current_usuario.admin?)
       @facturas = Factura.where(empresa_id: current_usuario.empresa.id)
+    elsif (current_usuario.funcionario_user?)
+      @facturas = Factura.where(empresa_id: current_usuario.empresa.id).where(responsavel: current_usuario.nome)
     end
   end
+
 
   # GET /facturas/1
   # GET /facturas/1.json
@@ -41,11 +45,10 @@ class FacturasController < ApplicationController
   def create
     @factura = Factura.new(factura_params)
 
-    #unless current_usuario.super_admin?
-      @factura.empresa_id = current_usuario.empresa.id
-      @factura.responsavel = current_usuario.nome
-    #end
+    @factura.empresa_id = current_usuario.empresa.id
+    @factura.responsavel = current_usuario.nome
 
+    @factura.percentagem_imposto = current_usuario.empresa.ipc
     @factura.referencia = @factura.gera_referencia
 
     respond_to do |format|
@@ -62,6 +65,7 @@ class FacturasController < ApplicationController
   # PATCH/PUT /facturas/1
   # PATCH/PUT /facturas/1.json
   def update
+
     respond_to do |format|
       if @factura.update(factura_params)
         format.html { redirect_to @factura, notice: 'Factura actualizado com sucesso.' }

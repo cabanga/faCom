@@ -63,7 +63,7 @@ class FuncionariosController < ApplicationController
   end
 
   def tornar_usuario
-    #@funcionario.tornar_usuario
+    @funcionario.tornar_usuario
 
     redirect_to funcionarios_url
   end
@@ -86,6 +86,6 @@ class FuncionariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funcionario_params
-      params.require(:funcionario).permit(:nome, :telemovel, :tipo_de_ident, :numero_ident, :empresa_id, :usuario_id)
+      params.require(:funcionario).permit(:nome, :telemovel, :tipo_de_ident, :numero_ident, :empresa_id, :usuario_id, :email)
     end
 end

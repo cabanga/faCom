@@ -12,6 +12,10 @@ class Factura < ApplicationRecord
     end
   end
 
+  def valor_do_ipc
+    self.valor_total * self.empresa.ipc.to_i / 100
+  end
+
   def gera_referencia
     letra_da_factura = "F"
     ultimo_pagamento = Factura.where(empresa_id: self.empresa.id).last
@@ -20,7 +24,6 @@ class Factura < ApplicationRecord
       return "#{letra_da_factura}000001/#{Time.now.year}"
     else
       ref = ultimo_pagamento.referencia
-
       n = ref.to_s.split('')
       n.pop
       n.pop
@@ -32,6 +35,18 @@ class Factura < ApplicationRecord
       n += 1
       return "#{letra_da_factura}#{n.to_s.rjust(6, '0')}/#{Time.now.year}"
     end
+  end
+
+  def self.valor_mensal_das_facturas_do_funcionario(funcionario_user)
+    valor = 0
+    facturas = Factura.where(responsavel: funcionario_user.nome).where(is_payd: true).where('extract(month from updated_at) = ?', Time.now.month)
+
+    facturas.each do |factura|
+      valor += factura.valor_total
+    end
+
+    return valor
+
   end
 
   validates :cliente,

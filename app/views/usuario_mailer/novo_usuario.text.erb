@@ -1,0 +1,17 @@
+Olá, <%= @usuario.nome %>
+
+Seja bem vindo a faCom.
+Foste adicionado a empresa <%= @usuario.empresa.nome %> no sistema faCom
+faCom é um sistema de gestão de faturas, que proporciona a todo e qualquer instituição empresárial a organizar – se e a funcionar como uma só, de forma plena e transparente.
+
+Dados do Usuário
+Usuário: <%= @usuario.email %> ou <%= @usuario.telemovel %>
+Senha: <%= @usuario.senha_provisoria %>
+
+Pode acessar o nosso sistema
+
+<%= link_to "AQUI", new_usuario_session_url%>
+
+M. Cumprimentos
+A Equipa Facom
++244 913 747 220
