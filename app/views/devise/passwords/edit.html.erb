@@ -1,25 +1,42 @@
-<h2>Change your password</h2>
+<% @color_bg = "color_bg"%>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+  <div class="flex-container-fluid " style="margin-top: 10%;">
+    <div class="flex-row flex-center-xs">
+      <div class="flex-col-xs-12 flex-col-sm-4">
+        <% if false %>
+          <%=  %>
+        <%else%>
+          <%= image_tag("facom.png", alt: "logotipo da facom", class:"profile-img-card") %>
+        <%end%>
+
+        <h2>NOVA SENHA</h2>
+          <%= f.input :password, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'Nova Senha', label: false  %>
+          <br>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+          <% end %>
+          <%= f.input :password_confirmation, autocomplete: "off", :input_html => {class:'form-control '}, placeholder: 'Repetir Nova Senha', label: false  %>
+          <br>
+
+          <%= f.button :button, "MUDAR SENHA", class: "btn btn-sm btn-default btn-block guardar", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A Entrar..." } %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <br>
+
+  <div class="flex-container-fluid ">
+    <div class="flex-row flex-center-xs">
+      <div class="flex-col-xs-6 flex-col-sm-2">
+        <%= link_to 'TENHO SENHA',  new_usuario_session_url, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A voltar..." } %>
+      </div>
+      <div class="flex-col-xs-6 flex-col-sm-2">
+        <%= link_to 'REGISTAR-SE',  new_registo_path, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A processar..." } %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

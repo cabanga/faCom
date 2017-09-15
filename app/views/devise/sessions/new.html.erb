@@ -12,15 +12,12 @@
         <%end%>
 
         <h2>faCom</h2>
-
           <%= f.input :login, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'email ou telemovel', label: false  %>
           <br>
           <%= f.input :password, :input_html => {class:'form-control '}, autocomplete: 'off',placeholder: '********', label: false  %>
           <br>
-          <%= f.button :button, "entrar", class: "btn btn-sm btn-default btn-block guardar", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A Entrar..." } %>
-
+          <%= f.button :button, "ENTRAR", class: "btn btn-sm btn-default btn-block guardar", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A Entrar..." } %>
       </div>
-
     </div>
   </div>
 
@@ -29,31 +26,22 @@
   <div class="flex-container-fluid ">
     <div class="flex-row flex-center-xs">
       <div class="flex-col-xs-6 flex-col-sm-2">
-        <%= link_to 'voltar',  root_url, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A voltar..." } %>
+        <%= link_to 'VOLTAR',  root_url, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A voltar..." } %>
       </div>
-
       <div class="flex-col-xs-6 flex-col-sm-2">
-        <%= link_to 'Registar-se',  new_registo_path, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A processar..." } %>
+        <%= link_to 'REGISTAR-SE',  new_registo_path, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A processar..." } %>
       </div>
-
     </div>
   </div>
 
-<br>
+  <br>
 
   <div class="flex-container-fluid ">
     <div class="flex-row flex-center-xs">
-      <div class="flex-col-xs-6 flex-col-sm-2">
-        <% link_to 'Entrar com Facebook',  "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A Processar..." } %>
+      <div class="flex-col-xs-4">
+        <%= link_to 'NOVA SENHA',  new_password_path(resource_name), class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A processar..." } %>
       </div>
-
-      <div class="flex-col-xs-6 flex-col-sm-2">
-        <% link_to 'Registar-se',  new_registo_path, class: "btn btn-sm btn-default btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>A processar..." } %>
-      </div>
-
     </div>
   </div>
 
 <% end %>
-
-<!-- <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div> -->

@@ -24,6 +24,8 @@
     <div class="col-xs-12 col-sm-4">
       <%= f.input :nome, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: Joaquim de Almeida Paulo', label: "Nome do Usuário"  %>
       <br>
+      <%= f.input :email, autofocus: true, :input_html => {class:'form-control '}, placeholder: 'ex: paulo@email.co.ao', label: "e-mail do Usuário"  %>
+      <br>
       <%= f.input :telemovel, :input_html => {class:'form-control '}, placeholder: 'ex: 913747220', label: "Nº de Telemóvel"  %>
       <br>
       <%= f.association :empresa, :input_html => {class:'form-control '}, placeholder: 'Adiciona a Empresa', label: "Empresa", collection: Empresa.all, label_method: :nome, value_method: :id   %>

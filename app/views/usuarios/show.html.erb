@@ -2,7 +2,7 @@
 <%= breadcrumb_index([link_to('Home', root_url), link_to('Usuários', usuarios_url), "#{@usuario.nome}"]) %>
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_funcionario_path(@usuario) %> </li>
+  <li role="presentation" class="active"> <%= link_to '<span><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</span>'.html_safe, edit_usuario_path(@usuario) %> </li>
   <li role="presentation"> <%= link_to '<span><i class="fa fa-trash-o" aria-hidden="true"></i> Apagar</span>'.html_safe, @usuario, method: :delete, data: { confirm: 'Tens certesa ?' }, class: "apagar" %> </li>
 </ul>
 <br>
