@@ -4,12 +4,16 @@ class FacturasController < ApplicationController
   # GET /facturas
   # GET /facturas.json
   def index
+
     if (current_usuario.super_admin?)
       @facturas = Factura.all
-    else
+    elsif (current_usuario.admin?)
       @facturas = Factura.where(empresa_id: current_usuario.empresa.id)
+    elsif (current_usuario.funcionario_user?)
+      @facturas = Factura.where(empresa_id: current_usuario.empresa.id).where(responsavel: current_usuario.nome)
     end
   end
+
 
   # GET /facturas/1
   # GET /facturas/1.json
