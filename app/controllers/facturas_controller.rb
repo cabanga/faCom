@@ -45,11 +45,10 @@ class FacturasController < ApplicationController
   def create
     @factura = Factura.new(factura_params)
 
-    #unless current_usuario.super_admin?
-      @factura.empresa_id = current_usuario.empresa.id
-      @factura.responsavel = current_usuario.nome
-    #end
+    @factura.empresa_id = current_usuario.empresa.id
+    @factura.responsavel = current_usuario.nome
 
+    @factura.percentagem_imposto = current_usuario.empresa.ipc
     @factura.referencia = @factura.gera_referencia
 
     respond_to do |format|
@@ -66,6 +65,7 @@ class FacturasController < ApplicationController
   # PATCH/PUT /facturas/1
   # PATCH/PUT /facturas/1.json
   def update
+
     respond_to do |format|
       if @factura.update(factura_params)
         format.html { redirect_to @factura, notice: 'Factura actualizado com sucesso.' }

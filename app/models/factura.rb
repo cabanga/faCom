@@ -12,6 +12,10 @@ class Factura < ApplicationRecord
     end
   end
 
+  def valor_do_ipc
+    self.valor_total * self.empresa.ipc.to_i / 100
+  end
+
   def gera_referencia
     letra_da_factura = "F"
     ultimo_pagamento = Factura.where(empresa_id: self.empresa.id).last
@@ -20,7 +24,6 @@ class Factura < ApplicationRecord
       return "#{letra_da_factura}000001/#{Time.now.year}"
     else
       ref = ultimo_pagamento.referencia
-
       n = ref.to_s.split('')
       n.pop
       n.pop

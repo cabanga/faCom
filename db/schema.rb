@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 20170914131223) do
     t.integer  "estado"
     t.boolean  "is_active"
     t.integer  "cidade_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "logotipo"
+    t.integer  "ipc",        default: 5, null: false
     t.index ["cidade_id"], name: "index_empresas_on_cidade_id", using: :btree
   end
 

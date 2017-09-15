@@ -80,6 +80,7 @@ class ItemFacturasController < ApplicationController
     @factura.item_facturas.each do |item|
       valor_total += item.preco_total
     end
+
     @factura.update_columns(valor_total: valor_total)
   end
 

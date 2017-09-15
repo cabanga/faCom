@@ -147,9 +147,9 @@ class DetalheDaFactura < Prawn::Document
          move_down 5
          text '0,00 AKZ', size: 7, :align => :right
          move_down 5
-         text "0,00 AKZ", size: 7, :align => :right
+         text "#{@factura.valor_do_ipc.to_kwanza} (#{@factura.percentagem_imposto} %)", size: 7, :align => :right
          move_down 9.5
-         text "#{@factura.valor_total.to_kwanza}",:styles => [:bold], size: 10, :align => :right
+         text "#{valor_total_da_factura.to_kwanza}",:styles => [:bold], size: 10, :align => :right
        end
       end
     end
@@ -157,6 +157,10 @@ class DetalheDaFactura < Prawn::Document
     def rodape
       estado_factura
       texto_de_rodape
+    end
+
+    def valor_total_da_factura
+      @factura.valor_total + (@factura.item_facturas.blank? ? 0 : @factura.valor_do_ipc)
     end
 
     def estado_factura
