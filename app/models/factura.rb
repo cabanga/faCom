@@ -34,6 +34,18 @@ class Factura < ApplicationRecord
     end
   end
 
+  def self.valor_mensal_das_facturas_do_funcionario(funcionario_user)
+    valor = 0
+    facturas = Factura.where(responsavel: funcionario_user.nome).where(is_payd: true).where('extract(month from updated_at) = ?', Time.now.month)
+
+    facturas.each do |factura|
+      valor += factura.valor_total
+    end
+
+    return valor
+
+  end
+
   validates :cliente,
      presence: {message: 'não pode estar em branco'},
      format: {with: NOME_REGEX, message: "caracteres inválidos. Ex: Hermenegildo ou Beatriz Madalena"},
