@@ -57,10 +57,11 @@ ActiveRecord::Schema.define(version: 20170914131223) do
     t.string   "telemovel"
     t.string   "tipo_de_ident"
     t.string   "numero_ident"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "empresa_id"
     t.integer  "usuario_id"
+    t.string   "email",         default: "", null: false
     t.index ["empresa_id"], name: "index_funcionarios_on_empresa_id", using: :btree
     t.index ["usuario_id"], name: "index_funcionarios_on_usuario_id", using: :btree
   end

@@ -5,30 +5,22 @@ class Funcionario < ApplicationRecord
   def tornar_usuario
     usuario = Usuario.new
 
-    usuario.senha_provisoria = rand(2**256).to_s(36).ljust(8, 'a')[0..10]
+    senha = rand(2**256).to_s(36).ljust(8, 'a')[0..10]
+
     usuario.nome = self.nome
     usuario.telemovel = self.telemovel
-    usuario.empresa_id = self.id
+    usuario.empresa_id = self.empresa_id
     usuario.role = 1
-    # usuario.email = "#{self.email}"
-    usuario.password = usuario.senha_provisoria
-    usuario.password_confirmation = usuario.senha_provisoria
+    usuario.email = self.email
+
+    usuario.senha_provisoria = senha
+    usuario.password = senha
+    usuario.password_confirmation = senha
 
     usuario.save
+    self.update_columns(usuario_id: usuario.id)
 
-    puts "****************************************"*10
-
-    p usuario
-
-    #
-    #
-    #
-    # # unless Rails.env.development? || Rails.env.test?
-    # #  RegistoMailer.aprovar_registo(usuario).deliver
-    # # end
-    #
-    # self.update_columns(usuario_id: usuario.id)
-
+    UsuarioMailer.novo_usuario(usuario).deliver
 
   end
 
