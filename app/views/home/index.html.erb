@@ -1,3 +1,10 @@
 <%= render "panel_informativo"%>
 <hr class="hidden-xs">
-<%= render "menu"%>
+
+<% if (current_usuario.super_admin?) %>
+  <%= render "menu_super_admin"%>
+<% elsif (current_usuario.admin?)  %>
+  <%= render "menu_admin"%>
+<% elsif (current_usuario.funcionario_user?)  %>
+  <%= render "menu_funcionario"%>
+<% end %>

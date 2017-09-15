@@ -10,7 +10,7 @@ class Funcionario < ApplicationRecord
     usuario.nome = self.nome
     usuario.telemovel = self.telemovel
     usuario.empresa_id = self.empresa_id
-    usuario.role = 1
+    usuario.role = 2
     usuario.email = self.email
 
     usuario.senha_provisoria = senha

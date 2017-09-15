@@ -7,7 +7,7 @@ class Usuario < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  enum role: {super_admin: 0, admin: 1}
+  enum role: {super_admin: 0, admin: 1, funcionario_user: 2}
 
   def login=(login)
     @login = login
