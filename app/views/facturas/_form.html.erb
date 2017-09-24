@@ -24,7 +24,8 @@
     </div>
 
     <div class="col-xs-12 col-sm-4">
-
+        <%= f.input :is_proforma, label: "Tipo de Factura", :input_html => {class:'form-control '}, collection: ["Factura Normal", "Factura Pro-Forma"], 
+        placeholder: "Tipo de Factura" %>
     </div>
   </div>
 <% end %>

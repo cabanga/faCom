@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170914131223) do
+ActiveRecord::Schema.define(version: 20170924114816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170914131223) do
     t.integer  "percentagem_imposto", default: 0,     null: false
     t.decimal  "valor_total",         default: "0.0", null: false
     t.decimal  "desconto",            default: "0.0", null: false
+    t.string   "is_proforma"
     t.index ["empresa_id"], name: "index_facturas_on_empresa_id", using: :btree
   end
 
