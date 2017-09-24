@@ -26,9 +26,13 @@ class DetalheDaFactura < Prawn::Document
 
   private
     def referencia
-      bounding_box([430, cursor + 0], :width => 120, :height => 30) do
+      bounding_box([430, cursor + 0], :width => 150, :height => 30) do
         indent(0) do
-          formatted_text [{:text => "Factura Nº. #{@factura.referencia}", :styles => [:bold], :size =>9, :align => :right}]
+          if (@factura.is_proforma == "Factura Normal")
+            formatted_text [{:text => "Factura Nº. #{@factura.referencia}", :styles => [:bold], :size =>9, :align => :right}]
+          elsif (@factura.is_proforma == "Factura Pro-Forma")
+            formatted_text [{:text => "Pro-Forma Nº. #{@factura.referencia}", :styles => [:bold], :size =>9, :align => :right}]
+          end
         end
       end
     end
@@ -168,15 +172,28 @@ class DetalheDaFactura < Prawn::Document
         text 'Estado da Factura', size: 7, :align => :center
       end
 
-      if (@factura.is_payd)
-        table([["Pago"]],  position: 460,
-          :column_widths => [80],
-          :cell_style =>  {:font_style => :bold,:background_color => '5cb85c', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
-      else
-        table([["Não Pago"]],  position: 460,
-          :column_widths => [80],
+      if (@factura.is_proforma == "Factura Normal")
+        if (@factura.is_payd)
+          table([["Pago"]],  position: 460,
+            :column_widths => [80],
+            :cell_style =>  {:font_style => :bold,:background_color => '5cb85c', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
+        else
+          table([["Não Pago"]],  position: 460,
+            :column_widths => [80],
+            :cell_style =>  {:font_style => :bold, :background_color => 'f0ad4e', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
+        end
+
+      elsif (@factura.is_proforma == "Factura Pro-Forma")
+
+        table([["FACTURA PRO-FORMA"]],  position: 420,
+          :column_widths => [120],
           :cell_style =>  {:font_style => :bold, :background_color => 'f0ad4e', :borders => [], :align => :center, :size => 9, :text_color => 'FFFFFF'})
+
+
       end
+
+
+
 
     end
 
