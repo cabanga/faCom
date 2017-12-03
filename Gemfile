@@ -48,6 +48,10 @@ gem 'newrelic_rpm'
 gem 'omniauth-facebook'
 gem "nested_form"
 
+gem 'dropbox-sdk-v2', '~> 0.0.2'
+
+
+
 gem 'prawn'
 gem 'prawn-table'
 
