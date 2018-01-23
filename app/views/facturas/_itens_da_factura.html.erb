@@ -3,7 +3,7 @@
     <tr>
       <th>CÓDIGO</th>
       <th class="text-center">QUANTIDADE</th>
-      <th>DESCRIÇÃO</th>
+      <th class="hidden-xs">DESCRIÇÃO</th>
       <th class="text-right">PREÇO UNIT.</th>
       <th class="text-right">PREÇO TOTAL</th>
       <th colspan="3"></th>
@@ -15,7 +15,7 @@
     <tr>
       <td><%= item_factura.codigo %></td>
       <td class="text-center"><%= item_factura.quantidade %></td>
-      <td><%= item_factura.descricao %></td>
+      <td class="hidden-xs"><%= item_factura.descricao %></td>
       <td class="text-right"><%= item_factura.preco_unitario.to_kwanza %></td>
       <td class="text-right"><%= item_factura.preco_total.to_kwanza %></td>
 
