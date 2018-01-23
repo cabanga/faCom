@@ -10,7 +10,8 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= javascript_include_tag "application" %>
-  </head>
+  <link rel="manifest" href="/manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes"></head>
 
   <body class=" <%= @color_bg %>">
     <% if usuario_signed_in? %>

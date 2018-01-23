@@ -73,3 +73,4 @@ window.fbAsyncInit = function() {
 
 
 })
+//= require serviceworker-companion
