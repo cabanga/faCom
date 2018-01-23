@@ -1,0 +1,79 @@
+{
+  "name": "faCom facturas",
+  "short_name": "faCom facturas",
+  "start_url": "/",
+  "icons": [
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/facom-884468ab7f2883f9b8faf1392ce930ca353d694cf8178d685db9377b5e3acf3c.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  
+  ],
+  "theme_color": "#000000",
+  "background_color": "#663399",
+  "display": "fullscreen",
+  "orientation": "portrait"
+
+}

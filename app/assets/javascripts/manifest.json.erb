@@ -1,7 +1,7 @@
 <% icon_sizes = Rails.configuration.serviceworker.icon_sizes %>
 {
-  "name": "My Progressive Rails App",
-  "short_name": "Progressive",
+  "name": "faCom facturas",
+  "short_name": "faCom facturas",
   "start_url": "/",
   "icons": [
   <% icon_sizes.map { |s| "#{s}x#{s}" }.each.with_index do |dim, i| %>
@@ -13,6 +13,8 @@
   <% end %>
   ],
   "theme_color": "#000000",
-  "background_color": "#FFFFFF",
+  "background_color": "#663399",
   "display": "fullscreen",
+  "orientation": "portrait"
+
 }
