@@ -22,6 +22,18 @@
     src: url(/assets/fonts/ProximaNova-Light.otf) format("truetype");
 }
 
+.navbar-default .navbar-toggle {
+  border-color: transparent!important;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: transparent!important;
+}
+
+.distancia-facom{
+  margin-top: 50px;
+}
+
 .color-icon{
   color: #fff!important;
 }
