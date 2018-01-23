@@ -7,7 +7,7 @@ class LogotipoEmpresaUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production?
+  if true #Rails.env.production?
     storage :dropbox
   else
     storage :file

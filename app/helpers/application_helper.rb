@@ -74,7 +74,7 @@ module ApplicationHelper
       def to_kwanza
         valor = self
         valor = 0 if valor.blank?
-        number_to_currency(valor, unit: "AKz", separator: ",", delimiter:".", format: "%n %u")        
+        number_to_currency(valor, unit: "AKz", separator: ",", delimiter:".", format: "%n %u")
       end
 
       def to_month
@@ -134,7 +134,7 @@ module ApplicationHelper
       end
     end
 
-    Fixnum.class_eval do
+    Integer.class_eval do
       # Converte decimals para kwanza
       # deve ser chamado da como método de instância
       def to_kwanza
