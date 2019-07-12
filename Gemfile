@@ -41,7 +41,7 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave-dropbox', git: 'https://github.com/afaundez/carrierwave-dropbox.git'
 
-gem 'rmagick'
+#gem 'rmagick'
 gem 'mini_magick'
 gem 'devise'
 gem 'simple_form'

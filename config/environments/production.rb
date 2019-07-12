@@ -10,7 +10,6 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
@@ -22,14 +21,12 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'fa-com.herokuapp.com',
-    user_name:            ENV["GMAIL_USERNAME"],
-    password:             ENV["GMAIL_PASSWORD"],
+    user_name:            'facomtechys@gmail.com',
+    password:             '21cabanga21',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
 # ==============================================================================
-
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
